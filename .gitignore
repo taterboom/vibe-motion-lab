@@ -1,0 +1,14 @@
+node_modules/
+.DS_Store
+# 成片和渲染产物
+*.mp4
+*.mov
+*.webm
+*.wav
+*.mp3
+out/
+renders/
+# 克隆下来的外部工程（每个试验里放 ext/ 下）
+trials/*/ext/
+# 帧序列
+trials/*/frames/
