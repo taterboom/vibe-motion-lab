@@ -1,0 +1,56 @@
+{
+  "fps": 30,
+  "durationSeconds": 12,
+  "allowCustomDuration": true,
+  "maxOverlapFrames": 12,
+  "shots": [
+    {
+      "id": "brand-hook",
+      "startFrame": 0,
+      "endFrame": 40,
+      "visualOwner": "orbitask mark (fictional, authored SVG)",
+      "primaryAction": "orbit dot lands, mark resolves",
+      "colorState": "neutral"
+    },
+    {
+      "id": "intent",
+      "startFrame": 34,
+      "endFrame": 110,
+      "visualOwner": "prompt input",
+      "primaryAction": "goal typed, Send pressed",
+      "colorState": "interaction-blue"
+    },
+    {
+      "id": "routing",
+      "startFrame": 102,
+      "endFrame": 170,
+      "visualOwner": "routing dot",
+      "primaryAction": "dot runs Plan -> Assign -> Schedule",
+      "colorState": "execution-violet"
+    },
+    {
+      "id": "board",
+      "startFrame": 162,
+      "endFrame": 250,
+      "visualOwner": "task cards",
+      "primaryAction": "cards sort into Done",
+      "colorState": "execution-violet"
+    },
+    {
+      "id": "result",
+      "startFrame": 242,
+      "endFrame": 306,
+      "visualOwner": "week calendar",
+      "primaryAction": "week fills, headline holds",
+      "colorState": "result-amber"
+    },
+    {
+      "id": "lockup",
+      "startFrame": 298,
+      "endFrame": 360,
+      "visualOwner": "orbitask mark + CTA",
+      "primaryAction": "week collapses into mark",
+      "colorState": "neutral"
+    }
+  ]
+}

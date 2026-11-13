@@ -1,0 +1,17 @@
+{
+ "html": "outputs/qa/trap_test/logo_motion_var.html",
+ "probe": [
+  {
+   "t": 405.0,
+   "#bolt-left:stroke-dashoffset": "0.75px"
+  },
+  {
+   "t": 510.0,
+   "#bolt-left:stroke-dashoffset": "0.5px"
+  },
+  {
+   "t": 615.0,
+   "#bolt-left:stroke-dashoffset": "0.25px"
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "html": "logo_motion.html",
+ "probe": [
+  {
+   "t": 300.0,
+   "#bolt-left:stroke-dashoffset": "1px",
+   "#bolt-right:stroke-dashoffset": "1px",
+   "#logo:transform": "matrix(0.94, 0, 0, 0.94, 0, 0)",
+   "#bolt-cover:opacity": "1"
+  },
+  {
+   "t": 405.0,
+   "#bolt-left:stroke-dashoffset": "0.763413px",
+   "#bolt-right:stroke-dashoffset": "0.969794px",
+   "#logo:transform": "matrix(0.94, 0, 0, 0.94, 0, 0)",
+   "#bolt-cover:opacity": "1"
+  },
+  {
+   "t": 510.0,
+   "#bolt-left:stroke-dashoffset": "0.224439px",
+   "#bolt-right:stroke-dashoffset": "0.48236px",
+   "#logo:transform": "matrix(0.94, 0, 0, 0.94, 0, 0)",
+   "#bolt-cover:opacity": "1"
+  },
+  {
+   "t": 615.0,
+   "#bolt-left:stroke-dashoffset": "0.0406323px",
+   "#bolt-right:stroke-dashoffset": "0.118518px",
+   "#logo:transform": "matrix(0.94, 0, 0, 0.94, 0, 0)",
+   "#bolt-cover:opacity": "1"
+  },
+  {
+   "t": 720.0,
+   "#bolt-left:stroke-dashoffset": "0px",
+   "#bolt-right:stroke-dashoffset": "0.0119634px",
+   "#logo:transform": "matrix(0.94, 0, 0, 0.94, 0, 0)",
+   "#bolt-cover:opacity": "1"
+  },
+  {
+   "t": 750.0,
+   "#bolt-left:stroke-dashoffset": "0px",
+   "#bolt-right:stroke-dashoffset": "0.00281237px",
+   "#logo:transform": "matrix(0.94, 0, 0, 0.94, 0, 0)",
+   "#bolt-cover:opacity": "1"
+  },
+  {
+   "t": 800.0,
+   "#bolt-left:stroke-dashoffset": "0px",
+   "#bolt-right:stroke-dashoffset": "0px",
+   "#logo:transform": "matrix(1.03932, 0, 0, 1.03932, 0, 0)",
+   "#bolt-cover:opacity": "0.229082"
+  },
+  {
+   "t": 900.0,
+   "#bolt-left:stroke-dashoffset": "0px",
+   "#bolt-right:stroke-dashoffset": "0px",
+   "#logo:transform": "matrix(1.05, 0, 0, 1.05, 0, 0)",
+   "#bolt-cover:opacity": "0"
+  },
+  {
+   "t": 1050.0,
+   "#bolt-left:stroke-dashoffset": "0px",
+   "#bolt-right:stroke-dashoffset": "0px",
+   "#logo:transform": "matrix(0.985, 0, 0, 0.985, 0, 0)",
+   "#bolt-cover:opacity": "0"
+  }
+ ]
+}

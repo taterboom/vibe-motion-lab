@@ -1,0 +1,47 @@
+{
+  "html": "logo_motion.html",
+  "times_ms": [
+    0,
+    90,
+    180,
+    300,
+    360,
+    420,
+    560,
+    690,
+    720,
+    750,
+    780,
+    825,
+    900,
+    1050,
+    1260,
+    1500
+  ],
+  "frames": [
+    "outputs/motion_frames/frame_000000ms.png",
+    "outputs/motion_frames/frame_000090ms.png",
+    "outputs/motion_frames/frame_000180ms.png",
+    "outputs/motion_frames/frame_000300ms.png",
+    "outputs/motion_frames/frame_000360ms.png",
+    "outputs/motion_frames/frame_000420ms.png",
+    "outputs/motion_frames/frame_000560ms.png",
+    "outputs/motion_frames/frame_000690ms.png",
+    "outputs/motion_frames/frame_000720ms.png",
+    "outputs/motion_frames/frame_000750ms.png",
+    "outputs/motion_frames/frame_000780ms.png",
+    "outputs/motion_frames/frame_000825ms.png",
+    "outputs/motion_frames/frame_000900ms.png",
+    "outputs/motion_frames/frame_001050ms.png",
+    "outputs/motion_frames/frame_001260ms.png",
+    "outputs/motion_frames/frame_001500ms.png"
+  ],
+  "strip": "outputs/motion_strip.png",
+  "final_frame_contract": {
+    "final_frame": "outputs/motion_frames/frame_001500ms.png",
+    "static_render": "outputs/final_render.png",
+    "mean_abs_diff": 0.811,
+    "max_abs_diff": 217.0,
+    "pct_pixels_off_by_25plus": 1.12
+  }
+}

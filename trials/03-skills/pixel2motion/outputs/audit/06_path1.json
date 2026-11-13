@@ -1,0 +1,24 @@
+{
+  "segment_count": 3,
+  "cubic_segments": 0,
+  "line_segments": 3,
+  "closed": false,
+  "budget": null,
+  "over_budget": false,
+  "median_segment_length": 543.401,
+  "short_segment_warnings": [],
+  "join_angle_threshold_degrees": 8.0,
+  "join_angle_warnings": [
+    {
+      "join_after_segment": 1,
+      "angle_degrees": 125.616
+    },
+    {
+      "join_after_segment": 2,
+      "angle_degrees": 111.911
+    }
+  ],
+  "input_svg": "outputs/fit_work/iters/06_robust_line_fit.svg",
+  "selected_path_index": 1,
+  "path_count": 5
+}

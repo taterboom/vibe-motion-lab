@@ -63,8 +63,9 @@ vibe-motion-lab/
   - 试它的两个特色：在 Studio 里把音频文件拖到时间线上（**需要用户在浏览器里操作**）；默认输出带透明通道的 ProRes 4444。
 - [x] **1.2 脚手架 create-vibe-motion-3d**（2026-11-13，记录见 `trials/02-scaffold-3d/TRIAL.md`）
   - `npm create vibe-motion-3d@latest trials/02-scaffold-3d`，`pnpm dev`，导出一段帧序列。
-- [ ] **1.3 技能包 skills（17 个）**
+- [x] **1.3 技能包 skills（17 个）**（2026-11-13 完成，汇总见 `trials/03-skills/SUMMARY.md`；用户评价待填）
   - `npx skills add vibe-motion/skills`，装到本目录，智能体选 Claude Code。
+  - 2026-11-13 实装：`npx skills add vibe-motion/skills --skill '*' --agent claude-code -y --copy` 只装上 15 个。`pixel2motion` 和 `remotion-vinyl-player` 的 SKILL.md 头部 YAML 不合法（description 未加引号且含 `: `），被安装器跳过，已手工拷入 `.claude/skills/`，文件未改。共用素材放在 `trials/03-skills/inputs/`。分四组由子代理并行执行。
   - 逐个用 README 里的触发方式跑一遍示例，每个技能一条试验记录。分三组：
     - 写了方法的：`disney-animation-rule-skill`、`pixel2motion`、`brand-launch-video-star`、`perspective-illusion`
     - 自带实现的：`colorize`、`remotion-candlestick`、`remotion-3d-ticker`、`remotion-vinyl-player`、`light-spotlight-render`、`printed-curtain-render`

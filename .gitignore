@@ -9,6 +9,15 @@ node_modules/
 out/
 renders/
 # 克隆下来的外部工程（每个试验里放 ext/ 下）
-trials/*/ext/
+**/ext/
 # 帧序列
-trials/*/frames/
+**/frames/
+.venv/
+__pycache__/
+*.zip
+*.gif
+
+# 技能包本体可由 skills-lock.json 恢复（pixel2motion、remotion-vinyl-player 需手工从 vibe-motion/skills@f558ec4 拷入，见 tasks/todo.md 1.3）
+.claude/skills/
+# 中间截图
+**/stills/

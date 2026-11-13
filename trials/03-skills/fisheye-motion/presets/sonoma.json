@@ -1,0 +1,7 @@
+{
+  "videoWidth": 1080, "videoHeight": 1080,
+  "imageSrc": "sonoma.jpg",
+  "focusFrom": {"x": 0.5, "y": 0.5},
+  "focusTo": {"x": 0.9, "y": 0.5},
+  "rect": {"x": 0.82, "y": 0.44, "w": 0.16, "h": 0.1, "color": "#ffd900", "opacity": 0.9, "blend": "multiply"}
+}

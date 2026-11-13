@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "skills": {
+    "3d-chladni-render": {
+      "source": "vibe-motion/skills",
+      "sourceType": "github",
+      "skillPath": "3d-chladni-render/SKILL.md",
+      "computedHash": "54436ee4de71b1248623f00a5dd650eb68099aa56c4d02007fae657470ccd76e",
+      "installMode": "copy"
+    },
+    "brand-launch-video-star": {
+      "source": "vibe-motion/skills",
+      "sourceType": "github",
+      "skillPath": "brand-launch-video-star/SKILL.md",
+      "computedHash": "b055ba1b66b48c8f354ef2b299b9a8029a1e69bebb2df9ce32020b7046ce7bf5",
+      "installMode": "copy"
+    },
+    "claude-typer": {
+      "source": "vibe-motion/skills",
+      "sourceType": "github",
+      "skillPath": "claude-typer/SKILL.md",
+      "computedHash": "3c807a11400cf3eaf0a986fe32e19e576240e00906012f5e68541848331aa610",
+      "installMode": "copy"
+    },
+    "colorize": {
+      "source": "vibe-motion/skills",
+      "sourceType": "github",
+      "skillPath": "colorize/SKILL.md",
+      "computedHash": "b1defb4dee26568837f2cde8a9b786790a268647de460eb4028ed21b7d8382c9",
+      "installMode": "copy"
+    },
+    "disney-animation-rule-skill": {
+      "source": "vibe-motion/skills",
+      "sourceType": "github",
+      "skillPath": "disney-animation-rule-skill/SKILL.md",
+      "computedHash": "969b4f4c297e9f35e491f92c1fb7a09af5938e3712232d0b6a9da085e6f6f701",
+      "installMode": "copy"
+    },
+    "fisheye-motion": {
+      "source": "vibe-motion/skills",
+      "sourceType": "github",
+      "skillPath": "fisheye-motion/SKILL.md",
+      "computedHash": "8d067dae331bd7258c1538a9dd5ce3ca1e5287b284dd707a984580a2bf12b575",
+      "installMode": "copy"
+    },
+    "light-spotlight-render": {
+      "source": "vibe-motion/skills",
+      "sourceType": "github",
+      "skillPath": "light-spotlight-render/SKILL.md",
+      "computedHash": "27af90313846dae3cee769395b399b212bf3b624ea264b5607622a81f9025878",
+      "installMode": "copy"
+    },
+    "perspective-illusion": {
+      "source": "vibe-motion/skills",
+      "sourceType": "github",
+      "skillPath": "perspective-illusion/SKILL.md",
+      "computedHash": "2b94ab3854b4b5b80eb259b5bf02eaf529d81a45ce2d4512001a35aa43de23d1",
+      "installMode": "copy"
+    },
+    "printed-curtain-render": {
+      "source": "vibe-motion/skills",
+      "sourceType": "github",
+      "skillPath": "printed-curtain-render/SKILL.md",
+      "computedHash": "26b8323712ef73c2035975be136080ea4c0935464d9195b18c6c77cf92eeb2a2",
+      "installMode": "copy"
+    },
+    "procedural-fish-render": {
+      "source": "vibe-motion/skills",
+      "sourceType": "github",
+      "skillPath": "procedural-fish-render/SKILL.md",
+      "computedHash": "e81810be1976273c93a34c9ef0015fd8bb577ad37f4315a66bd752a946b31aa2",
+      "installMode": "copy"
+    },
+    "remotion-3d-ticker": {
+      "source": "vibe-motion/skills",
+      "sourceType": "github",
+      "skillPath": "remotion-3d-ticker/SKILL.md",
+      "computedHash": "9406fa3d953a840204f1ac9c27a915fcf0ef4756be7da3a240d217875e419027",
+      "installMode": "copy"
+    },
+    "remotion-candlestick": {
+      "source": "vibe-motion/skills",
+      "sourceType": "github",
+      "skillPath": "remotion-candlestick/SKILL.md",
+      "computedHash": "1a3f6d9ce4d988c43f70609d835d161389fd1bd0a7e0568c450c824d1a22c1fe",
+      "installMode": "copy"
+    },
+    "ruler-progress-render": {
+      "source": "vibe-motion/skills",
+      "sourceType": "github",
+      "skillPath": "ruler-progress-render/SKILL.md",
+      "computedHash": "a79d3adfaa9955123c404bca90cdc45fddc3651606b5bbced86059d281c204dc",
+      "installMode": "copy"
+    },
+    "threejs-earth-render": {
+      "source": "vibe-motion/skills",
+      "sourceType": "github",
+      "skillPath": "threejs-earth-render/SKILL.md",
+      "computedHash": "af5f5ca3851b91ca8feb36cbbbedfcc93890214d0c114404015895e6e5da6661",
+      "installMode": "copy"
+    },
+    "wechat-2d-render": {
+      "source": "vibe-motion/skills",
+      "sourceType": "github",
+      "skillPath": "wechat-2d-render/SKILL.md",
+      "computedHash": "755b6037a521cdc2bf51c0b356bbdd8a5fbf3f5dc6ac1f1e56249e75f83e98a7",
+      "installMode": "copy"
+    }
+  }
+}

@@ -4,22 +4,22 @@
 
 ## 关于整体
 
-1. 这组仓库出自几组不同的作者，没有统一的方法论，规则之间有互相矛盾的地方。结果：
-2. 作者那些好看的成片是他逐镜头手工指挥出来的，不是哪个技能一键生成的。结果：
-3. 17 个技能里，写下了可以搬到别处用的动效方法的只有三四个（`disney-animation-rule-skill`、`pixel2motion`、`brand-launch-video-star`、`perspective-illusion`），其余是固定效果。结果：
-4. 没有哪个部分是为二维角色对话做的。结果：
+1. 这组仓库出自几组不同的作者，没有统一的方法论，规则之间有互相矛盾的地方。结果：初步成立（1.3）。脚手架 AGENTS.md 让「用户目测」，而 brand-launch、pixel2motion、disney、perspective-illusion 都要求智能体抽帧自查；fisheye-motion 一份说明里两种说法都有。
+2. 作者那些好看的成片是他逐镜头手工指挥出来的，不是哪个技能一键生成的。结果：初步成立（1.3）。克隆类技能只能复现作者的演示，要做新东西都得手改代码或参数；brand-launch 照方法走出的片子偏模板感。
+3. 17 个技能里，写下了可以搬到别处用的动效方法的只有三四个（`disney-animation-rule-skill`、`pixel2motion`、`brand-launch-video-star`、`perspective-illusion`），其余是固定效果。结果：成立（1.3）。四个方法类确实写了可搬的方法；其余 13 个是固定效果，只零星有可借的技巧（数据先存本地、列表复制取模、离屏逐帧截图）。
+4. 没有哪个部分是为二维角色对话做的。结果：1.3 范围内成立。最接近的是 wechat-2d（聊天界面，消息写死）和 disney（角色动作方法，不管对话）。
 
 ## 关于动效
 
-5. `disney-animation-rule-skill` 的核心做法是把一个动作拆成预备、爆发、过冲、落定几段，每段时长不同，用一张阶段表代替一条缓动曲线。用了它，动作会明显不那么僵。结果：
-6. `pixel2motion` 的参考文件里有成套的具体数值（预备、动作、收尾的时间比例，过冲多少，逐字入场的间隔），这些数值对标志动画以外的东西也管用。结果：
-7. `brand-launch-video-star` 的规划方法（30 秒排 8 到 12 个节拍、每拍一个主动作、转场重叠 6 到 12 帧）能产出节奏好的宣传片。结果：
+5. `disney-animation-rule-skill` 的核心做法是把一个动作拆成预备、爆发、过冲、落定几段，每段时长不同，用一张阶段表代替一条缓动曲线。用了它，动作会明显不那么僵。结果：成立，需修正（1.3 A/B）。B 版有 8 个具名阶段，预备下蹲、砸地压扁、眼睛滞后都出来了，比 A 有分量；但技能几乎不给数值，只有案例的帧数，压扁和回弹量要自己定。待用户看 AB.mp4 确认。
+6. `pixel2motion` 的参考文件里有成套的具体数值（预备、动作、收尾的时间比例，过冲多少，逐字入场的间隔），这些数值对标志动画以外的东西也管用。结果：成立（1.3）。阶段比例 20:50:30（描线 10:70:20）、预备占主动作 20–30%、错开 10–20%、过冲按品牌性格分 1.02/1.04/1.08/1.12、挤压 10–25%。都是常见经验值，能搬到标题、卡片、图标；角色只适用预备和重叠。
+7. `brand-launch-video-star` 的规划方法（30 秒排 8 到 12 个节拍、每拍一个主动作、转场重叠 6 到 12 帧）能产出节奏好的宣传片。结果：部分成立（1.3）。按它做的 12 秒片实测 0.5 拍/秒，单一主动作的帧占比高，转场重叠 6–8 帧，规则都守住了；但作者自己的演示更密（0.6–0.73 拍/秒），成片最大的运动是整屏换色而不是产品动作。节奏好不好待用户看。
 8. `remotion-code-motion-explainer` 说的「连续」是指画面上的对象一直在场，靠状态变化和焦点移动推进，不整屏切换。它带的镜头库是暗色界面风格。结果：
-9. `create-vibe-motion` 和 `fisheye-motion` 的智能体说明里写着「视觉效果非必要不跑自动化验证，写完让用户目测」，也就是它不让智能体自查画面。结果：`create-vibe-motion` 部分成立（2026-11-13，1.1）：AGENTS.md 原话如此，只有这两行；`create-vibe-motion-3d` 没带 AGENTS.md。`fisheye-motion` 待 1.3 验证。
+9. `create-vibe-motion` 和 `fisheye-motion` 的智能体说明里写着「视觉效果非必要不跑自动化验证，写完让用户目测」，也就是它不让智能体自查画面。结果：成立（1.1、1.3）。fisheye-motion 原话「视觉效果非必要不跑自动化验证，渲染后目测」，但同一文件又要求渲一帧检查位置。方法类技能反而都要求自查。`create-vibe-motion` 部分成立（2026-11-13，1.1）：AGENTS.md 原话如此，只有这两行；`create-vibe-motion-3d` 没带 AGENTS.md。`fisheye-motion` 待 1.3 验证。
 
 ## 关于自查
 
-10. 只有 `pixel2motion` 有成套的自查脚本（按阶段边界抽帧拼图、检查缓动是否生效、检查卡顿和跳变）。这些脚本针对网页动画，思路可以搬到 Remotion。结果：
+10. 只有 `pixel2motion` 有成套的自查脚本（按阶段边界抽帧拼图、检查缓动是否生效、检查卡顿和跳变）。这些脚本针对网页动画，思路可以搬到 Remotion。结果：部分修正（1.3）。perspective-illusion 也带一个 `blink_map.py` 闪烁检查。pixel2motion 的 QA 能搬：抓帧和最终帧比对对应 `remotion still`，缓动探针改成对 `timeline.js` 的 Node 测试（已在 disney 试验里做了 `scripts/dump-poses.mjs`），连续性扫描要加颜色选项，否则描边类素材误报。其他技能的「校验」只查尺寸、时长、文件。
 11. `remotion-starter` 的 hook 能拦住一批机械错误（`Math.random`、CSS 动画、`interpolate` 没限幅），但用命令行写文件可以绕过，也有误伤。结果：
 
 ## 关于声音
@@ -38,4 +38,4 @@
 
 ## 关于许可
 
-20. `skills`、`sound`、`auto-motion`、`create-vibe-motion` 仓库没有许可证文件；`remotion-starter` 和 `remotion-code-motion-explainer` 是 MIT。这影响的是能不能把代码抄进公开仓库，不影响试用。结果：部分修正（2026-11-13）：`create-vibe-motion` 和 `-3d` 的 npm 包 `package.json` 声明 `"license": "MIT"`，仓库里虽没有许可证文件，但发布的包是 MIT。其余待查。
+20. `skills`、`sound`、`auto-motion`、`create-vibe-motion` 仓库没有许可证文件；`remotion-starter` 和 `remotion-code-motion-explainer` 是 MIT。这影响的是能不能把代码抄进公开仓库，不影响试用。结果：部分修正（2026-11-13）：`create-vibe-motion` 和 `-3d` 的 npm 包 `package.json` 声明 `"license": "MIT"`，仓库里虽没有许可证文件，但发布的包是 MIT。其余（1.3）：skills 仓库根目录确认无许可证；fisheye、wechat-2d、ruler、procedural-fish、threejs-earth 外部工程无许可证；3D-Chladni 代码 Apache-2.0 但素材和预设 CC BY-NC 4.0；地球贴图来自 Solar System Scope（CC BY 4.0）未署名；线帘物理引擎 CC BY-SA 4.0、p5 为 LGPL；fisheye 演示图是作者本人的短信截图。

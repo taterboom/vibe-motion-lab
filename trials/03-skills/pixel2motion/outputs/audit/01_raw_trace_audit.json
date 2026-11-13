@@ -1,0 +1,2464 @@
+{
+  "segment_count": 903,
+  "cubic_segments": 0,
+  "line_segments": 903,
+  "closed": true,
+  "budget": null,
+  "over_budget": false,
+  "median_segment_length": 1.0,
+  "short_segment_warnings": [],
+  "join_angle_threshold_degrees": 8.0,
+  "join_angle_warnings": [
+    {
+      "join_after_segment": 1,
+      "angle_degrees": 56.31
+    },
+    {
+      "join_after_segment": 2,
+      "angle_degrees": 123.69
+    },
+    {
+      "join_after_segment": 4,
+      "angle_degrees": 153.435
+    },
+    {
+      "join_after_segment": 6,
+      "angle_degrees": 119.745
+    },
+    {
+      "join_after_segment": 8,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 10,
+      "angle_degrees": 63.435
+    },
+    {
+      "join_after_segment": 11,
+      "angle_degrees": 116.565
+    },
+    {
+      "join_after_segment": 13,
+      "angle_degrees": 63.435
+    },
+    {
+      "join_after_segment": 14,
+      "angle_degrees": 116.565
+    },
+    {
+      "join_after_segment": 16,
+      "angle_degrees": 135.0
+    },
+    {
+      "join_after_segment": 18,
+      "angle_degrees": 63.435
+    },
+    {
+      "join_after_segment": 19,
+      "angle_degrees": 116.565
+    },
+    {
+      "join_after_segment": 21,
+      "angle_degrees": 63.435
+    },
+    {
+      "join_after_segment": 22,
+      "angle_degrees": 116.565
+    },
+    {
+      "join_after_segment": 24,
+      "angle_degrees": 146.31
+    },
+    {
+      "join_after_segment": 26,
+      "angle_degrees": 126.87
+    },
+    {
+      "join_after_segment": 28,
+      "angle_degrees": 116.565
+    },
+    {
+      "join_after_segment": 30,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 32,
+      "angle_degrees": 126.87
+    },
+    {
+      "join_after_segment": 34,
+      "angle_degrees": 126.87
+    },
+    {
+      "join_after_segment": 36,
+      "angle_degrees": 135.0
+    },
+    {
+      "join_after_segment": 38,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 40,
+      "angle_degrees": 135.0
+    },
+    {
+      "join_after_segment": 42,
+      "angle_degrees": 116.565
+    },
+    {
+      "join_after_segment": 44,
+      "angle_degrees": 116.565
+    },
+    {
+      "join_after_segment": 46,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 47,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 49,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 50,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 52,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 53,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 55,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 56,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 58,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 59,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 61,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 62,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 64,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 65,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 67,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 68,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 70,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 71,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 73,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 74,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 76,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 77,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 79,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 80,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 82,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 83,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 85,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 86,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 88,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 89,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 91,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 92,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 94,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 95,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 97,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 98,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 100,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 101,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 103,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 104,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 106,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 107,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 109,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 110,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 112,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 113,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 115,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 116,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 118,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 119,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 121,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 122,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 124,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 125,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 127,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 128,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 129,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 130,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 131,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 133,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 134,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 136,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 137,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 139,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 140,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 142,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 143,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 145,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 146,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 148,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 149,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 150,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 151,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 152,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 154,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 155,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 157,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 158,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 160,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 161,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 163,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 164,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 166,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 167,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 169,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 170,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 172,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 173,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 175,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 176,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 178,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 179,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 181,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 182,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 184,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 185,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 187,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 188,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 190,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 191,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 193,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 194,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 196,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 197,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 198,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 199,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 200,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 202,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 203,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 205,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 206,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 207,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 208,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 209,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 211,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 212,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 214,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 215,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 217,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 218,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 220,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 221,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 223,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 224,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 226,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 227,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 229,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 230,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 232,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 233,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 235,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 236,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 238,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 239,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 241,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 242,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 244,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 245,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 247,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 248,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 250,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 251,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 253,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 254,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 256,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 257,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 259,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 260,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 261,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 262,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 263,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 265,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 266,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 268,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 269,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 271,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 272,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 274,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 275,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 277,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 278,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 280,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 281,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 283,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 284,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 286,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 287,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 289,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 290,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 292,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 293,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 295,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 296,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 298,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 299,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 301,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 302,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 304,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 305,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 307,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 308,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 310,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 311,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 313,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 314,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 316,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 317,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 319,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 320,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 322,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 323,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 325,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 326,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 327,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 328,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 329,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 331,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 332,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 334,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 335,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 337,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 338,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 339,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 340,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 341,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 343,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 344,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 346,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 347,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 349,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 350,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 352,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 353,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 355,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 356,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 358,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 359,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 361,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 362,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 364,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 365,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 366,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 367,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 368,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 370,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 371,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 373,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 374,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 376,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 377,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 379,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 380,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 382,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 383,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 385,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 386,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 388,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 389,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 391,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 392,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 394,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 395,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 397,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 398,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 400,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 401,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 403,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 404,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 406,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 407,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 409,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 410,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 412,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 413,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 415,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 416,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 418,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 419,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 421,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 422,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 424,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 425,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 427,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 428,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 430,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 431,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 433,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 434,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 436,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 437,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 439,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 440,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 442,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 443,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 445,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 446,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 448,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 449,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 451,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 452,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 454,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 455,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 457,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 458,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 460,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 461,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 463,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 464,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 466,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 467,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 469,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 470,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 472,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 473,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 475,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 476,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 478,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 479,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 481,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 482,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 484,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 485,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 487,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 488,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 490,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 491,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 493,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 494,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 496,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 497,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 499,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 500,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 502,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 503,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 505,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 506,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 508,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 509,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 511,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 512,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 514,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 515,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 517,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 518,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 520,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 521,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 523,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 524,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 526,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 527,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 529,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 530,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 532,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 533,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 535,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 536,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 538,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 539,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 541,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 542,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 544,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 545,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 547,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 548,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 550,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 551,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 553,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 554,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 556,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 557,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 559,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 560,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 562,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 563,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 565,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 566,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 568,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 569,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 571,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 572,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 573,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 574,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 575,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 577,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 578,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 580,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 581,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 583,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 584,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 586,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 587,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 589,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 590,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 592,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 593,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 595,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 596,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 598,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 599,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 601,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 602,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 604,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 605,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 606,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 607,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 608,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 610,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 611,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 613,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 614,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 616,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 617,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 619,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 620,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 622,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 623,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 625,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 626,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 628,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 629,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 631,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 632,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 634,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 635,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 637,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 638,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 640,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 641,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 643,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 644,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 646,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 647,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 649,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 650,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 652,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 653,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 655,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 656,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 657,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 658,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 659,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 661,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 662,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 664,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 665,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 667,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 668,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 670,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 671,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 673,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 674,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 676,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 677,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 679,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 680,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 682,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 683,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 685,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 686,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 688,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 689,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 691,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 692,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 694,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 695,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 697,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 698,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 700,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 701,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 703,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 704,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 706,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 707,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 709,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 710,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 712,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 713,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 715,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 716,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 718,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 719,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 721,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 722,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 724,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 725,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 727,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 728,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 730,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 731,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 733,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 734,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 736,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 737,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 739,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 740,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 742,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 743,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 745,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 746,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 748,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 749,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 751,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 752,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 754,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 755,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 757,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 758,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 760,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 761,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 763,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 764,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 766,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 767,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 768,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 769,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 770,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 772,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 773,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 775,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 776,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 778,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 779,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 781,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 782,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 783,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 784,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 785,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 787,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 788,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 790,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 791,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 793,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 794,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 796,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 797,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 799,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 800,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 802,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 803,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 805,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 806,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 808,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 809,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 811,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 812,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 814,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 815,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 817,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 818,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 820,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 821,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 823,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 824,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 825,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 826,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 827,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 829,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 830,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 832,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 833,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 835,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 836,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 838,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 839,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 841,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 842,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 844,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 845,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 847,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 848,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 849,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 850,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 851,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 853,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 854,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 856,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 857,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 859,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 860,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 862,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 863,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 865,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 866,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 868,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 869,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 871,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 872,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 874,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 875,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 877,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 878,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 880,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 881,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 883,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 884,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 886,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 887,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 889,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 890,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 892,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 893,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 895,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 896,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 898,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 899,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 901,
+      "angle_degrees": 90.0
+    },
+    {
+      "join_after_segment": 902,
+      "angle_degrees": 90.0
+    }
+  ],
+  "input_svg": "outputs/fit_work/iters/01_raw_trace.svg",
+  "selected_path_index": 2,
+  "path_count": 5
+}

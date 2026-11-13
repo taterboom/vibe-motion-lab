@@ -1,0 +1,28 @@
+{
+  "project": "Orbitask concept launch film (fictional product, vibe-motion-lab trial 1.3)",
+  "accessedAt": "2026-11-13",
+  "assets": [
+    {
+      "id": "orbitask-mark",
+      "role": "logo",
+      "localPath": "project/public/brand/orbitask-mark.svg",
+      "sourceUrl": "user-provided://orbitask-mark.svg",
+      "sourceType": "user-provided-original",
+      "verifiedAgainst": "Authored in this trial; Orbitask is a fictional brand with no official source",
+      "rightsNote": "Fictional mark authored for a local trial. Not a real company. Do not publish as a real brand.",
+      "authenticity": "verified",
+      "checksum": "sha256:bd18b66e0c5ef9c74119c1ebab9a5e382803cbbe4b6fbac4eed7613fb9a5e3ad"
+    },
+    {
+      "id": "orbitask-wordmark",
+      "role": "wordmark",
+      "localPath": "project/public/brand/orbitask-wordmark.svg",
+      "sourceUrl": "user-provided://orbitask-wordmark.svg",
+      "sourceType": "user-provided-original",
+      "verifiedAgainst": "Authored in this trial; SVG <text> in system sans, not outlined",
+      "rightsNote": "Fictional wordmark authored for a local trial.",
+      "authenticity": "verified",
+      "checksum": "sha256:77a7c865e1fffdf9d7365a61693deda5b6e767185b0a1d3f7f020b9d27c78cf8"
+    }
+  ]
+}

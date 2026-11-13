@@ -1,0 +1,54 @@
+{
+  "input": "input/source_alpha.png",
+  "foreground_detection": {
+    "mode": "alpha",
+    "alpha_threshold": 12
+  },
+  "groups": [
+    {
+      "fill": "#2e382b",
+      "area_pixels": 704373,
+      "loop_count": 2,
+      "point_count": 304
+    },
+    {
+      "fill": "#f2cf73",
+      "area_pixels": 114972,
+      "loop_count": 2,
+      "point_count": 221
+    },
+    {
+      "fill": "#2d372a",
+      "area_pixels": 623,
+      "loop_count": 306,
+      "point_count": 1209
+    },
+    {
+      "fill": "#2c3629",
+      "area_pixels": 351,
+      "loop_count": 253,
+      "point_count": 1012
+    },
+    {
+      "fill": "#2e382a",
+      "area_pixels": 339,
+      "loop_count": 230,
+      "point_count": 920
+    }
+  ],
+  "metrics": {
+    "source_foreground_pixels": 820658,
+    "vector_foreground_pixels": 822450,
+    "intersection_pixels": 820161,
+    "union_pixels": 822947,
+    "iou": 0.996615,
+    "recall_source_covered_by_vector": 0.999394,
+    "precision_vector_inside_source": 0.997217
+  },
+  "outputs": {
+    "svg": "outputs/trace/logo.svg",
+    "html": "outputs/trace/logo.html",
+    "vector_render": "outputs/trace/vector_render.png",
+    "overlay": "outputs/trace/overlay.png"
+  }
+}

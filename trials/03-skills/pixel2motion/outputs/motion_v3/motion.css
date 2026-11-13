@@ -1,0 +1,73 @@
+/* Hiraishin 标志动效：swift / precise / electric。全部元素共用一个 1500ms 时钟，
+   阶段用关键帧百分比表达；关键帧里的缓动全部写字面值（var() 在 @keyframes 里会被 Chromium 丢掉）。
+   0–20% 预备：瓦片淡入并「蓄力」缩到 0.94
+   20–70% 动作：上下两条黄边像闪电一样从画外劈下（左先右后，绿影随后），劈到底时镂空亮起 + 闪光 + 弹到 1.05 再回缩 0.985
+   70–100% 收尾：1.004 → 1，落在静态矢量上 */
+:root {
+  --p2m-duration: 1500ms;
+  --p2m-ease-enter: cubic-bezier(0.16, 1, 0.3, 1);   /* Energetic 预设 */
+  --p2m-ease-natural: cubic-bezier(0.4, 0, 0.2, 1);  /* 通用 natural，用于描线 */
+  --p2m-overshoot: 1.05;                             /* Energetic 1.12 按 precise 收敛 */
+}
+#logo {
+  transform-box: view-box;
+  transform-origin: 512px 512px;
+  animation: p2m-logo var(--p2m-duration) linear both;
+}
+#bolt-left, #bolt-right, #shadow-left, #shadow-right {
+  stroke-dasharray: 1 1;      /* butt cap + 1 1：t=0 不漏墨 */
+}
+#bolt-left    { animation: p2m-draw-bl var(--p2m-duration) linear both; }
+#bolt-right   { animation: p2m-draw-br var(--p2m-duration) linear both; }
+#shadow-left  { animation: p2m-draw-sl var(--p2m-duration) linear both; }
+#shadow-right { animation: p2m-draw-sr var(--p2m-duration) linear both; }
+#bolt-cover   { animation: p2m-cover var(--p2m-duration) linear both; }
+#flash        { animation: p2m-flash var(--p2m-duration) linear both; }
+
+@keyframes p2m-logo {
+  0%   { opacity: 0; transform: scale(0.86); animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); /* --p2m-ease-enter */ }
+  12%  { opacity: 1; transform: scale(0.97); animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1); /* 蓄力，对称 */ }
+  20%  { opacity: 1; transform: scale(0.94); animation-timing-function: linear; /* 劈下期间保持，焦点给闪电 */ }
+  50%  { opacity: 1; transform: scale(0.94); animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); /* --p2m-ease-enter：冲击 */ }
+  60%  { transform: scale(1.05); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* --p2m-ease-natural */ }
+  70%  { transform: scale(0.985); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+  84%  { transform: scale(1.004); animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes p2m-draw-bl {
+  0%   { stroke-dashoffset: 1; }
+  20%  { stroke-dashoffset: 1; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* --p2m-ease-natural */ }
+  48%  { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes p2m-draw-br {
+  0%   { stroke-dashoffset: 1; }
+  24%  { stroke-dashoffset: 1; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+  52%  { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes p2m-draw-sl {
+  0%   { stroke-dashoffset: 1; }
+  23%  { stroke-dashoffset: 1; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+  51%  { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes p2m-draw-sr {
+  0%   { stroke-dashoffset: 1; }
+  27%  { stroke-dashoffset: 1; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+  55%  { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 0; }
+}
+@keyframes p2m-cover {
+  0%   { opacity: 1; }
+  50%  { opacity: 1; animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+  58%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes p2m-flash {
+  0%   { opacity: 0; }
+  50%  { opacity: 0; animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+  52%  { opacity: 0.15; animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* v2：0.35 整片发灰，降到 0.15 */ }
+  62%  { opacity: 0; }
+  100% { opacity: 0; }
+}

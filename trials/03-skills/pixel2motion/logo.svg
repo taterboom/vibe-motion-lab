@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-64 -64 1152 1152">
+  <defs><clipPath id="tile-clip"><rect width="1024" height="1024" rx="221.9"/></clipPath></defs>
+  <g id="logo" clip-path="url(#tile-clip)">
+    <path id="tile" fill="#2e382b" fill-rule="evenodd" d="M0 0 H1024 V1024 H0 Z M597.8 -100.0 L212.8 631.0 L460.4 596.9 L328.3 1124.0 L424.3 1124.0 L809.8 392.3 L562.5 426.3 L694.2 -100.0 Z"/>
+    <path id="bolt-cover" d="M597.8 -100.0 L212.8 631.0 L460.4 596.9 L328.3 1124.0 L424.3 1124.0 L809.8 392.3 L562.5 426.3 L694.2 -100.0 Z" fill="#2e382b" stroke="#2e382b" stroke-width="4" stroke-linejoin="round" opacity="0"/>
+    <path id="shadow-left" d="M571.5 -50.0 L212.8 631.0 L460.4 596.9 L346.8 1050.0" fill="none" stroke="#8aa382" stroke-width="22.0" stroke-linejoin="round" transform="translate(-24,25)" pathLength="1"/>
+    <path id="shadow-right" d="M681.7 -50.0 L562.5 426.3 L809.8 392.3 L463.3 1050.0" fill="none" stroke="#8aa382" stroke-width="22.0" stroke-linejoin="round" transform="translate(-24,25)" pathLength="1"/>
+    <path id="bolt-left" d="M555.7 -20.0 L212.8 631.0 L460.4 596.9 L348.3 1044.0" fill="none" stroke="#f2cf73" stroke-width="29.7" stroke-linejoin="round" pathLength="1"/>
+    <path id="bolt-right" d="M674.2 -20.0 L562.5 426.3 L809.8 392.3 L466.4 1044.0" fill="none" stroke="#f2cf73" stroke-width="29.7" stroke-linejoin="round" pathLength="1"/>
+    <rect id="flash" x="0" y="0" width="1024" height="1024" fill="#fff6d8" opacity="0"/>
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs><clipPath id="tile-clip"><rect width="1024" height="1024" rx="221.9"/></clipPath></defs>
+  <g id="logo" clip-path="url(#tile-clip)">
+    <path id="tile" fill="#2e382b" fill-rule="evenodd" d="M0 0 H1024 V1024 H0 Z M597.8 -100.0 L212.8 631.0 L460.4 596.9 L328.3 1124.0 L424.3 1124.0 L802.7 405.9 L571.2 413.5 L687.5 -100.0 Z"/>
+    <path id="shadow-left" d="M597.8 -100.0 L212.8 631.0 L460.4 596.9 L328.3 1124.0" fill="none" stroke="#8aa382" stroke-width="23.0" stroke-linejoin="round" transform="translate(-23,25)" pathLength="1"/>
+    <path id="shadow-right" d="M687.5 -100.0 L571.2 413.5 L802.7 405.9 L424.3 1124.0" fill="none" stroke="#8aa382" stroke-width="23.0" stroke-linejoin="round" transform="translate(-23,25)" pathLength="1"/>
+    <path id="bolt-left" d="M597.8 -100.0 L212.8 631.0 L460.4 596.9 L328.3 1124.0" fill="none" stroke="#f2cf73" stroke-width="29.7" stroke-linejoin="round" pathLength="1"/>
+    <path id="bolt-right" d="M687.5 -100.0 L571.2 413.5 L802.7 405.9 L424.3 1124.0" fill="none" stroke="#f2cf73" stroke-width="29.7" stroke-linejoin="round" pathLength="1"/>
+  </g>
+</svg>

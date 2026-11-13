@@ -1,0 +1,8 @@
+{
+  "svg": "logo.svg",
+  "source": "input/source_pad64.png",
+  "overlay": "outputs/fit_iterations/07_final_logo_svg_overlay.png",
+  "iou": 0.9984,
+  "src_only_px": 1157,
+  "render_only_px": 168
+}
