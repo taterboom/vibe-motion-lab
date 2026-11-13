@@ -79,7 +79,7 @@ vibe-motion-lab/
   - 克隆到 `trials/05-starter`，`cd template && npm install && npx remotion studio`，渲染自带的三个镜头。
   - 在它的目录里开会话，看 7 个 hook 实际拦不拦（故意写一个 `Math.random`）、渲染前的确认清单、收工时的类型检查。
   - 走一遍它的出片流程技能 `cyxj-remotion-produce`。
-- [ ] **1.6 音效 sound**
+- [x] **1.6 音效 sound**（记录 `trials/06-sound/TRIAL.md`；装在 `trials/06-sound/.claude/skills/sound`，会话禁用了 `clash_freesound.py`）
   - 按 README 安装：`git clone https://github.com/vibe-motion/sound.git .claude/skills/sound`。
   - 用 README 的两条示例提示词触发，看它怎么选、怎么报理由、下载了什么。
   - 已知它的 `SKILL.md` 会让智能体在交付后推荐付费版，原样跑一次并记录实际表现。之后要不要删掉那几行，由用户定。

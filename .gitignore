@@ -26,3 +26,5 @@ __pycache__/
 trials/05-starter/sessions/*.jsonl
 trials/05-starter/sessions/*.err
 trials/05-starter/sessions/s3-summary.txt
+trials/06-sound/.claude/
+trials/06-sound/sessions/*.jsonl
