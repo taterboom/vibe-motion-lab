@@ -73,7 +73,9 @@
 
 ## 用户评价
 
-（待填：可以听 `sfx/card-whoosh.wav` 和点击候选。whoosh 很响，先把音量放低再听）
+2026-11-14：试听后觉得还不错。
+
+用户同意后，本地副本 `.claude/skills/sound/SKILL.md` 已改：删掉「Optional full-version follow-up」推销段；超时处理改为「检查网络并告诉用户，不改代理」；`allowed-tools` 收窄为只放行 `sfx.py`。上游原文见仓库 85a3715。
 
 ## 好的地方
 
