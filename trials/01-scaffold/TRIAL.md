@@ -18,7 +18,7 @@
 - **`pnpm remotion:render:demo`：没通过。** `scripts/remotion-render.mjs` 开头 `import { ACTIVE_COMPOSITION_ID } from "../motion/project.js"`，一路引到 `Scene.jsx`，Node 报 `ERR_UNKNOWN_FILE_EXTENSION ".jsx"`。照它的参数直接调 Remotion CLI 就能渲出来，所以只是渲染脚本的 bug，工程本身没问题。官方的「一键出透明片」开箱是坏的。
 - 直接用 CLI 渲染：通过，3 秒片渲染 7 秒。输出 ProRes 4444，`yuva444p12le`，带透明通道，48MB。
 - 音频清单：通过。往 `public/.vibe-motion/audio-tracks.json` 写一条 `{src, startFrame, durationInFrames, volume}`，渲染出的 mp4 带上了声音，起始时间对得上。
-- Studio 里拖拽音频：**待用户在浏览器里操作**。
+- Studio 里拖拽音频：**未测**（2026-11-13 用户决定跳过）。底层机制（写文件进 `public/` + 改清单）已用手写清单验证，只差人手拖拽的手感。
 
 ## 耗时和花费
 
@@ -61,7 +61,7 @@
 
 ## 用户评价
 
-（待用户看过 `out/` 里的成片、试过拖音频后填）
+（待用户看过 `out/` 里的成片后填）
 
 ## 好的地方 / 不好的地方
 

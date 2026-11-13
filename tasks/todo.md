@@ -57,7 +57,7 @@ vibe-motion-lab/
 
 每一项要回答四个问题：能不能开箱跑通；实际帧率下的成片什么样；它是怎么指挥智能体的；花了多少时间。
 
-- [ ] **1.1 脚手架 create-vibe-motion**（2026-11-13 基本完成，只差用户在 Studio 里试拖音频；记录见 `trials/01-scaffold/TRIAL.md`）
+- [x] **1.1 脚手架 create-vibe-motion**（2026-11-13 完成；拖拽音频经用户同意跳过，底层已验证；记录见 `trials/01-scaffold/TRIAL.md`）
   - `npm create vibe-motion@latest trials/01-scaffold`，`pnpm dev` 打开 Studio，渲染默认工程。
   - 弄清它的结构：只吃参数的 `Scene`、一次算出所有随帧变化量的纯函数 `timeline`、打包成插件的 `plugin`。
   - 试它的两个特色：在 Studio 里把音频文件拖到时间线上（**需要用户在浏览器里操作**）；默认输出带透明通道的 ProRes 4444。
