@@ -75,7 +75,7 @@ vibe-motion-lab/
   - `npx skills add vibe-motion/remotion-code-motion-explainer`。
   - 跑它带的镜头库：`cd assets/shot-library && npm install && npm run validate:shots && npm run test:bundle`，渲染几条有代表性的竖屏和横屏镜头。
   - 用 README 的示例提示词触发一次，看它的六步流程和每步的关卡实际怎么走。
-- [ ] **1.5 工作台 remotion-starter**
+- [x] **1.5 工作台 remotion-starter**（记录 `trials/05-starter/TRIAL.md`；会话用 `claude -p` 在 `ext/` 里起，另装了官方 `remotion-dev/skills`）
   - 克隆到 `trials/05-starter`，`cd template && npm install && npx remotion studio`，渲染自带的三个镜头。
   - 在它的目录里开会话，看 7 个 hook 实际拦不拦（故意写一个 `Math.random`）、渲染前的确认清单、收工时的类型检查。
   - 走一遍它的出片流程技能 `cyxj-remotion-produce`。

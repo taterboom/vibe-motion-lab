@@ -20,7 +20,7 @@
 ## 关于自查
 
 10. 只有 `pixel2motion` 有成套的自查脚本（按阶段边界抽帧拼图、检查缓动是否生效、检查卡顿和跳变）。这些脚本针对网页动画，思路可以搬到 Remotion。结果：部分修正（1.3）。perspective-illusion 也带一个 `blink_map.py` 闪烁检查。pixel2motion 的 QA 能搬：抓帧和最终帧比对对应 `remotion still`，缓动探针改成对 `timeline.js` 的 Node 测试（已在 disney 试验里做了 `scripts/dump-poses.mjs`），连续性扫描要加颜色选项，否则描边类素材误报。其他技能的「校验」只查尺寸、时长、文件。1.4 的讲解片技能也没有任何脚本，QC 证据是智能体自己填的 "pass"；但照清单抽帧确实查出了 117px 跳帧、5 秒空档、文字溢出。
-11. `remotion-starter` 的 hook 能拦住一批机械错误（`Math.random`、CSS 动画、`interpolate` 没限幅），但用命令行写文件可以绕过，也有误伤。结果：
+11. `remotion-starter` 的 hook 能拦住一批机械错误（`Math.random`、CSS 动画、`interpolate` 没限幅），但用命令行写文件可以绕过，也有误伤。结果：成立（2026-11-13）。真会话里 Write 写 `Math.random` 被拦、原因回给代理；命令行 heredoc 写同样内容不拦；`.js/.jsx` 不查；30 条假输入里误伤 4 条（clamp 写成常量、数据字段 `transition:`、字符串里的 `Math.random`、clamp 在 500 字符外），出片会话真碰到常量 clamp 误伤。另：收工 tsc 只拦一次，改 `kit/` 不跑 tsc；代理读了 `HARD_RULES.md` 后多数情况自觉不犯，hook 是兜底。
 
 ## 关于声音
 

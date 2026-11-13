@@ -1,0 +1,29 @@
+diff --git a/kit/scenes/index.ts b/kit/scenes/index.ts
+index 25674a0..04b347e 100644
+--- a/kit/scenes/index.ts
++++ b/kit/scenes/index.ts
+@@ -5,3 +5,4 @@ export { TalkingHead } from './TalkingHead';
+ export { SCENE_MAP } from './sceneMap';
+ export { POSES, poseForScene } from './poses';
+ export { TitleScene, TalkScene, ListScene, CompareScene, FlankCardsScene, type TimedItem } from './content';
++export { VChatScene, VTipScene, type ChatMessage } from './vertical';
+diff --git a/kit/scenes/sceneMap.ts b/kit/scenes/sceneMap.ts
+index cdef5c5..6673102 100644
+--- a/kit/scenes/sceneMap.ts
++++ b/kit/scenes/sceneMap.ts
+@@ -11,6 +11,7 @@
+  */
+ import type React from 'react';
+ import { TitleScene, TalkScene, ListScene, CompareScene, FlankCardsScene } from './content';
++import { VChatScene, VTipScene } from './vertical';
+ 
+ export const SCENE_MAP: Record<string, React.FC<any>> = {
+   title: TitleScene,           // 左侧竖排关键词卡逐张弹出(人像让到右侧)
+@@ -18,4 +19,7 @@ export const SCENE_MAP: Record<string, React.FC<any>> = {
+   list: ListScene,             // 人像缩成一侧卡,对侧逐条蹦出要点列表
+   compare: CompareScene,       // 人居中、两侧压暗,左右各一张迷你卡做短对决
+   flankcards: FlankCardsScene, // 人居中,左右各竖排放大浮卡(compare 的 N 卡推广)
++  // —— 竖屏(1080×1920)纯图形,无人像 ——
++  vchat: VChatScene,           // 聊天气泡串 + 标题/结论句(开场抛问题 / 收尾汇总)
++  vtip: VTipScene,             // 编号要点 + 对话演示(划掉错误回法 / 回复叠加 / 对方正在输入)
+ };

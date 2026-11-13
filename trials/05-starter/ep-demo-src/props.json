@@ -1,0 +1,80 @@
+{
+  "fps": 30,
+  "width": 1080,
+  "height": 1920,
+  "background": "#ece9e4",
+  "scenes": [
+    {
+      "type": "vchat",
+      "durationInSeconds": 2.5,
+      "props": {
+        "messages": [
+          { "side": "left", "label": "日本同事", "text": "日本語お上手ですね！", "gloss": "你日语说得真好！", "big": true, "appearAtSec": 0.15 }
+        ],
+        "caption": "被这么夸，怎么回？",
+        "captionSweep": "怎么回",
+        "captionAppearAtSec": 0.7
+      }
+    },
+    {
+      "type": "vtip",
+      "durationInSeconds": 3.3,
+      "props": {
+        "index": "01",
+        "heading": "别急着否认",
+        "context": { "label": "对方", "text": "日本語お上手ですね！" },
+        "avoid": { "label": "别这样回", "text": "いえいえ、全然です…", "appearAtSec": 0.3, "strikeAtSec": 0.75 },
+        "reply": { "label": "这样回", "text": "ありがとうございます！", "gloss": "谢谢！", "appearAtSec": 1.1 },
+        "note": "先大方道谢，别把夸奖推回去",
+        "noteSweep": "大方道谢",
+        "noteAppearAtSec": 1.5
+      }
+    },
+    {
+      "type": "vtip",
+      "durationInSeconds": 2.9,
+      "props": {
+        "index": "02",
+        "heading": "接一句，显得谦虚",
+        "context": { "label": "对方", "text": "日本語お上手ですね！" },
+        "pastReplies": [{ "text": "ありがとうございます！" }],
+        "reply": { "label": "再补一句", "text": "まだまだです。", "gloss": "还差得远呢。", "appearAtSec": 0.4 },
+        "note": "谦虚一句，分寸刚刚好",
+        "noteSweep": "谦虚一句",
+        "noteAppearAtSec": 0.85
+      }
+    },
+    {
+      "type": "vtip",
+      "durationInSeconds": 3.3,
+      "props": {
+        "index": "03",
+        "heading": "顺势反问，把话接下去",
+        "context": { "label": "对方", "text": "日本語お上手ですね！" },
+        "pastReplies": [{ "text": "ありがとうございます！" }, { "text": "まだまだです。" }],
+        "reply": { "label": "反问一句", "text": "〇〇さんは\n英語とか話せますか？", "gloss": "你会说英语之类的吗？", "appearAtSec": 0.4 },
+        "typing": { "appearAtSec": 0.95 },
+        "note": "把球抛回去，聊天就续上了",
+        "noteSweep": "把球抛回去",
+        "noteAppearAtSec": 1.3
+      }
+    },
+    {
+      "type": "vchat",
+      "durationInSeconds": 3.0,
+      "props": {
+        "title": "完整回法",
+        "messages": [
+          { "side": "left", "text": "日本語お上手ですね！", "appearAtSec": 0.1 },
+          { "side": "right", "text": "ありがとうございます！", "appearAtSec": 0.3 },
+          { "side": "right", "text": "まだまだです。", "appearAtSec": 0.5 },
+          { "side": "right", "text": "〇〇さんは\n英語とか話せますか？", "appearAtSec": 0.7 }
+        ],
+        "caption": "道谢 → 谦虚 → 反问",
+        "captionSweep": "道谢 → 谦虚 → 反问",
+        "captionAppearAtSec": 1.0,
+        "disableFadeOut": true
+      }
+    }
+  ]
+}

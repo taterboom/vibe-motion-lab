@@ -1,0 +1,41 @@
+diff --git a/kit/scenes/content.tsx b/kit/scenes/content.tsx
+index 6270823..c40ce91 100644
+--- a/kit/scenes/content.tsx
++++ b/kit/scenes/content.tsx
+@@ -9,7 +9,7 @@
+  *   自己是哪种 type(poses.poseForScene 据此决定主体姿态)。
+  */
+ import React from 'react';
+-import { interpolate, useCurrentFrame, useVideoConfig } from 'remotion';
++import { interpolate, random, useCurrentFrame, useVideoConfig } from 'remotion';
+ import {
+   FloatingCard,
+   SideList,
+@@ -38,6 +38,7 @@ const TITLE_DEMOTE_OPACITY = 0.62; // demoteOnNext:被后卡顶下去后压到
+ const TITLE_DEMOTE_SCALE = 0.97; // demoteOnNext:降权后的缩放
+ const TITLE_DEMOTE_FADE_SEC = 0.4; // 降权过渡时长
+ const TITLE_ARROW_PULSE_SEC = 0.3; // 连接箭头脉冲淡入时长
++const TITLE_JITTER_PX = 1.5; // 卡片逐帧抖动幅度(±px)
+ 
+ /**
+  * 卡间连接箭头(→):本卡出现时,在它与上一张之间脉冲淡入(0.3s),把演化链可视化。
+@@ -128,13 +129,17 @@ const TitleCardRow: React.FC<{
+     extrapolateRight: 'clamp',
+   });
+ 
++  // 逐帧轻微抖动:random(seed) 同 seed 同值,seed 含帧号 → 每帧不同但渲染可复现(禁 Math.random,见 HARD_RULES §2)
++  const jitterX = (random(`title-${elementId}-x-${frame}`) * 2 - 1) * TITLE_JITTER_PX;
++  const jitterY = (random(`title-${elementId}-y-${frame}`) * 2 - 1) * TITLE_JITTER_PX;
++
+   return (
+     <div
+       style={{
+         opacity,
+-        transform: `scale(${scale})`,
++        transform: `translate(${jitterX}px, ${jitterY}px) scale(${scale})`,
+         transformOrigin: 'left center',
+-      }}
++      }
+     >
+       <FloatingCard
+         item={{ title: card.title, highlight: card.highlight, muted: card.muted }}

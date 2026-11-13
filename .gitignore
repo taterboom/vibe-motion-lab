@@ -21,3 +21,8 @@ __pycache__/
 .claude/skills/
 # 中间截图
 **/stills/
+
+# 1.5 会话原始日志（含本机连接器列表，不入库）
+trials/05-starter/sessions/*.jsonl
+trials/05-starter/sessions/*.err
+trials/05-starter/sessions/s3-summary.txt
