@@ -1,0 +1,20 @@
+{
+ "clips": {
+  "ask": {
+   "file": "norm/ask.wav",
+   "dur": 2.88
+  },
+  "target_normal": {
+   "file": "norm/target_normal.wav",
+   "dur": 2.47
+  },
+  "q": {
+   "file": "norm/q.wav",
+   "dur": 3.297
+  },
+  "react": {
+   "file": "norm/react.wav",
+   "dur": 2.998
+  }
+ }
+}

@@ -1,0 +1,54 @@
+{
+  "episode": "ep001",
+  "stage": {
+    "scene": "izakaya",
+    "cast": [
+      {
+        "role": "bucho",
+        "look": "bucho",
+        "x": 290,
+        "face": 1,
+        "holding": "beer"
+      },
+      {
+        "role": "you",
+        "look": "you",
+        "x": 722,
+        "face": -1
+      }
+    ]
+  },
+  "lines": [
+    {
+      "role": "bucho",
+      "tag": "ask",
+      "lang": "ja",
+      "text": "[warm, slightly tipsy, friendly] リンさん、日本語、お上手ですね。",
+      "zh": "小林，你日语说得真好啊。"
+    },
+    {
+      "role": "you",
+      "tag": "target_normal",
+      "lang": "ja",
+      "text": "[happy, a little surprised] え、本当ですか？うれしいです。",
+      "zh": "诶，真的吗？好开心。"
+    },
+    {
+      "role": "host",
+      "tag": "q",
+      "lang": "zh-CN",
+      "text": "被日本人夸日语好，怎么回才不尴尬？"
+    },
+    {
+      "role": "bucho",
+      "tag": "react",
+      "lang": "ja",
+      "text": "[cheerful] いやいや、本当に。日本はどれくらい？",
+      "zh": "不不，真的。来日本多久了？"
+    }
+  ],
+  "n": 1,
+  "title": "被日本人问住的第 1 句｜日本語お上手ですね",
+  "scene": "公司欢迎会，邻座的部长",
+  "hook": "别否认。你一否认，对方还得再夸一轮。"
+}
