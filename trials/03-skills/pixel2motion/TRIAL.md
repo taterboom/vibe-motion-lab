@@ -69,7 +69,7 @@
 
 ## 用户评价
 
-（待填：请看 `outputs/preview/preview.mp4` 或在浏览器里开 `logo_motion.html`，重点看 700–900ms 的闪光和镂空亮起）
+2026-11-13：看了 preview.mp4，觉得很好。未提到 700–900ms 闪光发暗的问题。
 
 ## 改一处要多久
 

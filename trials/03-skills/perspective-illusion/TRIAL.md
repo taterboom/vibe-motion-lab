@@ -95,7 +95,7 @@ python blink_map.py ffmpeg out/final.mp4 out/blink.png      # 闪烁检查
 
 ## 用户评价
 
-待填
+2026-11-13：看了 final.mp4，觉得很好。
 
 ## 好的地方
 
