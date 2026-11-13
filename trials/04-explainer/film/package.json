@@ -1,0 +1,25 @@
+{
+  "name": "frame-pipeline-explainer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "render": "remotion render src/index.ts FramePipelineExplainer ../out/film.mp4 --codec h264 --muted",
+    "probe": "node scripts/probe-values.mjs",
+    "test:bundle": "remotion compositions src/index.ts"
+  },
+  "dependencies": {
+    "@remotion/cli": "4.0.489",
+    "@remotion/zod-types": "4.0.489",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.489",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "5.9.3",
+    "tsx": "^4.19.0"
+  }
+}

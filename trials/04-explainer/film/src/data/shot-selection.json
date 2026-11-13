@@ -1,0 +1,38 @@
+{
+  "searchedFile": "assets/shot-library/shot-library.json (63 entries)",
+  "searchMethod": "keyword match on tags/summary: 流程, 代码, 数据, 持续, 连续, 摄影机, 管线, 因果, 关系, 教程, 进度, pipeline, workflow; then read source of top candidates",
+  "semanticJob": "explain a linear pipeline (frame number -> function -> values -> scene -> screenshot -> ffmpeg -> video) where every stage shows live, correct values, plus two consequences (parallel, no-render check)",
+  "candidates": [
+    {
+      "composition": "WideKnowledgeWorld (ProductionSystem.tsx#KnowledgeWorld)",
+      "decision": "rejected (pattern borrowed)",
+      "why": "Closest to 'persistent objects + camera + focus'. But nodes are fixed 160px label cards with no content slot, so values/ball/thumbnails cannot live inside them. Also: card entrance delay is computed from the active beat's local frame, so every card fades out and re-enters at every beat boundary (verified at frame 204 of the 18.5s demo) - this breaks its own persistence promise. Borrowed only the idea of interpolating camera from previous beat to current beat."
+    },
+    {
+      "composition": "WideProcessPillBuilder (VibeCutReferenceShots.tsx)",
+      "decision": "rejected",
+      "why": "Pills for a video-editing workflow (分镜/粗剪/精剪/音效/BGM/渲染); stages are labels only, no stage produces a visible result. 4s fixed shot with presenter slot."
+    },
+    {
+      "composition": "WideExplodedWorkflowBoard",
+      "decision": "rejected",
+      "why": "Exploding cards around a headline; decorative, not causal."
+    },
+    {
+      "composition": "OfficialCodeWalkthrough (OfficialTemplateShots.tsx)",
+      "decision": "rejected",
+      "why": "Portrait 3s; code lines are hard-coded constants and switch at a hard-coded frame 42; not parameterized by props beyond title/accent."
+    },
+    {
+      "composition": "WideTimelinePreviewCompare",
+      "decision": "rejected",
+      "why": "Timeline vs preview comparison for video editing, unrelated semantics."
+    },
+    {
+      "composition": "ProductionSystem.tsx themes.studio palette + clamp/ease constants",
+      "decision": "reused (copied ~12 lines)",
+      "why": "Keeps visual consistency with the library's dark studio look; no component logic reused."
+    }
+  ],
+  "result": "No reusable component matched the semantic job. New components written from scratch; library contributed palette tokens and one easing curve."
+}

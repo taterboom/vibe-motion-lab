@@ -1,0 +1,105 @@
+{
+  "windows": [
+    {
+      "from": 0,
+      "to": 150,
+      "frames": [
+        0,
+        21,
+        43,
+        64,
+        85,
+        106,
+        128,
+        149
+      ],
+      "sheet": "qc/windows/window-000-150.png"
+    },
+    {
+      "from": 120,
+      "to": 300,
+      "frames": [
+        120,
+        146,
+        171,
+        197,
+        222,
+        248,
+        273,
+        299
+      ],
+      "sheet": "qc/windows/window-120-300.png"
+    },
+    {
+      "from": 270,
+      "to": 450,
+      "frames": [
+        270,
+        296,
+        321,
+        347,
+        372,
+        398,
+        423,
+        449
+      ],
+      "sheet": "qc/windows/window-270-450.png"
+    },
+    {
+      "from": 420,
+      "to": 600,
+      "frames": [
+        420,
+        446,
+        471,
+        497,
+        522,
+        548,
+        573,
+        599
+      ],
+      "sheet": "qc/windows/window-420-600.png"
+    },
+    {
+      "from": 570,
+      "to": 660,
+      "frames": [
+        570,
+        583,
+        595,
+        608,
+        621,
+        634,
+        646,
+        659
+      ],
+      "sheet": "qc/windows/window-570-660.png"
+    }
+  ],
+  "contactSheet": "qc/contact-sheet.jpg",
+  "finalHold": {
+    "frameA": 631,
+    "frameB": 659,
+    "pngDifferentPixels": 0,
+    "mp4DecodedDifferentPixels": 8519,
+    "identical": true
+  },
+  "determinism": {
+    "frame": 400,
+    "renders": 2,
+    "differentPixels": 0,
+    "identical": true
+  },
+  "technical": {
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "frames": 660,
+    "codec": "h264",
+    "pix_fmt": "yuvj420p",
+    "duration": 22.0,
+    "sizeBytes": 3124775,
+    "audioStreams": 0,
+    "pass": true
+  }
+}

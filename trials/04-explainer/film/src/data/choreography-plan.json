@@ -1,0 +1,142 @@
+{
+  "productionContract": {
+    "script": "代码动画是怎么做出来的：每一帧画面都由帧号算出来。帧号进入时间线函数，算出这一帧的所有数值（位置、压扁、颜色、相机）；画面组件只按这些数值画图；无头浏览器把每一帧截成图片；ffmpeg 把图片合成视频。因为每帧只取决于帧号，所以可以并行渲染，也可以不渲染、直接算数值来检查动作。",
+    "narration": "none",
+    "subtitleAuthority": "none (no narration); explicit beat timeline below is the timing authority",
+    "mutedUnderstandable": true,
+    "onScreenLanguage": "zh-CN",
+    "aspectRatio": "16:9",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "durationInFrames": 660,
+    "brand": "none; neutral dark studio palette borrowed from shot-library ProductionSystem 'studio' theme",
+    "technicalFacts": [
+      "Remotion: useCurrentFrame() gives the frame number; every value is computed from it",
+      "Remotion renders by opening the composition in headless Chromium and screenshotting each frame",
+      "ffmpeg stitches the frame images into a video file",
+      "Because each frame only depends on frame + props, frames can be rendered out of order / in parallel (Remotion --concurrency)",
+      "A pure timeline function can be evaluated in Node without rendering pixels"
+    ],
+    "delivery": "H.264 MP4, no audio stream",
+    "assets": "none external; all shapes drawn in React/SVG; system fonts PingFang SC / Menlo"
+  },
+  "demoMotion": {
+    "note": "The film explains itself with a tiny demo: a ball whose x, squash, color and camera zoom are computed by demoTimeline(demoFrame). The same function drives the value panel, the scene panel, the thumbnails and the final curve chart, so the numbers on screen are the real numbers drawn.",
+    "period": 60
+  },
+  "beats": [
+    {
+      "id": "b1-hook",
+      "startFrame": 0,
+      "endFrame": 75,
+      "statement": "代码动画是怎么做出来的？每一帧画面都由帧号算出来。",
+      "purpose": "hook: pose the question and introduce the single input",
+      "inputState": "empty dark stage",
+      "dominantVerb": "count",
+      "actors": ["statement-bar", "frame-chip"],
+      "visibleTransformation": "frame chip appears at center and its number starts counting 0,1,2…",
+      "outputState": "a large ticking frame number is the only object on stage",
+      "viewerFocus": "frame-chip number",
+      "handoff": "the chip itself shrinks and travels left toward the timeline function"
+    },
+    {
+      "id": "b2-frame-in",
+      "startFrame": 75,
+      "endFrame": 165,
+      "statement": "帧号进入时间线函数",
+      "purpose": "show the frame number is the only input of a function",
+      "inputState": "frame chip at center",
+      "dominantVerb": "enter",
+      "actors": ["frame-chip", "timeline-fn"],
+      "visibleTransformation": "timeline(frame) box assembles at left; chip slides into its input slot; box border lights on contact",
+      "outputState": "chip docked in timeline-fn input, still counting",
+      "viewerFocus": "chip docking into the box",
+      "handoff": "box emits four output wires to the right"
+    },
+    {
+      "id": "b3-values",
+      "startFrame": 165,
+      "endFrame": 270,
+      "statement": "算出这一帧的所有数值：位置、压扁、颜色、相机",
+      "purpose": "make 'all values for this frame' concrete",
+      "inputState": "timeline-fn lit, wires drawing to the right",
+      "dominantVerb": "compute",
+      "actors": ["timeline-fn", "value-panel", "wires-fn-values"],
+      "visibleTransformation": "four rows (x 位置, squash 压扁, color 颜色, camera 相机) appear one after another; each shows a live number + bar that changes with the chip number",
+      "outputState": "value panel with four live values",
+      "viewerFocus": "the four numbers changing in lockstep with the frame chip",
+      "handoff": "wires extend from the value rows to the scene panel"
+    },
+    {
+      "id": "b4-scene",
+      "startFrame": 270,
+      "endFrame": 360,
+      "statement": "画面组件只按这些数值画图",
+      "purpose": "show the scene is a pure drawing of the values, nothing else",
+      "inputState": "value panel live",
+      "dominantVerb": "draw",
+      "actors": ["value-panel", "scene-panel", "ball", "wires-values-scene"],
+      "visibleTransformation": "Scene(values) viewport opens at right; ball drawn at x, squashed by squash, tinted by color, viewport zoomed by camera; each row pulses when its property visibly changes the ball",
+      "outputState": "ball moving in the viewport, synced with values",
+      "viewerFocus": "ball vs value rows",
+      "handoff": "a browser chrome frame closes around the scene panel"
+    },
+    {
+      "id": "b5-capture",
+      "startFrame": 360,
+      "endFrame": 440,
+      "statement": "无头浏览器把每一帧截成图片",
+      "purpose": "screenshot per frame",
+      "inputState": "scene panel live",
+      "dominantVerb": "capture",
+      "actors": ["browser-frame", "scene-panel", "film-strip", "frame-chip"],
+      "visibleTransformation": "headless-browser chrome wraps the scene; on each captured frame a white flash fires and a numbered PNG thumbnail drops into the film strip at the bottom",
+      "outputState": "film strip filling with numbered PNG thumbnails that show the ball at different positions",
+      "viewerFocus": "flash then thumbnail landing",
+      "handoff": "film strip slides right toward ffmpeg"
+    },
+    {
+      "id": "b6-encode",
+      "startFrame": 440,
+      "endFrame": 510,
+      "statement": "ffmpeg 把图片合成视频",
+      "purpose": "images become a video file",
+      "inputState": "film strip full of PNGs",
+      "dominantVerb": "stitch",
+      "actors": ["film-strip", "ffmpeg-box", "video-file"],
+      "visibleTransformation": "thumbnails stream into the ffmpeg box; a video.mp4 bar with a progress fill grows on its right",
+      "outputState": "video.mp4 complete (progress 100%)",
+      "viewerFocus": "video bar filling",
+      "handoff": "film strip splits into three lanes"
+    },
+    {
+      "id": "b7-parallel",
+      "startFrame": 510,
+      "endFrame": 585,
+      "statement": "每帧只取决于帧号，所以可以并行渲染",
+      "purpose": "consequence 1 of determinism",
+      "inputState": "single strip",
+      "dominantVerb": "split",
+      "actors": ["film-strip", "worker-lanes"],
+      "visibleTransformation": "strip splits into 3 worker lanes labeled 帧 0–19 / 20–39 / 40–59; all three fill at the same time, out of order",
+      "outputState": "three full lanes, total time 1/3",
+      "viewerFocus": "three lanes filling simultaneously",
+      "handoff": "scene panel dims; value panel grows"
+    },
+    {
+      "id": "b8-check",
+      "startFrame": 585,
+      "endFrame": 660,
+      "statement": "也可以不渲染，直接算数值来检查动作",
+      "purpose": "consequence 2 of determinism; resolve",
+      "inputState": "full system visible",
+      "dominantVerb": "check",
+      "actors": ["scene-panel", "value-panel", "curve-chart", "frame-chip"],
+      "visibleTransformation": "browser + scene dim with label 不截图; the value panel transforms into a curve chart that traces x and squash over frames 0–59 directly from timeline(); squash dips get check marks",
+      "outputState": "curve chart with checks; whole system held still",
+      "viewerFocus": "curves tracing",
+      "handoff": "final hold from frame 630 to 659 (all children frozen on display frame 630)"
+    }
+  ]
+}

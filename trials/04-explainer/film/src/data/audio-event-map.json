@@ -1,0 +1,16 @@
+{
+  "rendered": false,
+  "reason": "brief asks for on-screen text, no voiceover; delivery is silent (rendered with --muted, no audio stream). Map kept so sound can be added later on visible events.",
+  "events": [
+    {"frame": 121, "event": "frame-chip-docks-into-timeline-fn", "sound": "soft-click"},
+    {"frame": 121, "event": "timeline-fn-lights (same frame as dock)", "sound": "(merged with click)"},
+    {"frame": 181, "event": "value-rows-appear (x4, every 10f)", "sound": "tiny-tick x4"},
+    {"frame": 270, "event": "scene-panel-opens", "sound": "short-whoosh"},
+    {"frame": 360, "event": "capture-starts (60 captures, 1/frame)", "sound": "shutter loop, low"},
+    {"frame": 448, "event": "ffmpeg-starts", "sound": "short-sweep"},
+    {"frame": 498, "event": "video.mp4 complete", "sound": "tonal-resolve"},
+    {"frame": 530, "event": "3 lanes refill simultaneously", "sound": "triple tick"},
+    {"frame": 595, "event": "curve trace starts", "sound": "soft rising tone"},
+    {"frame": 630, "event": "final hold", "sound": "end"}
+  ]
+}

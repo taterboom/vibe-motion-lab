@@ -85,6 +85,13 @@
       "computedHash": "1a3f6d9ce4d988c43f70609d835d161389fd1bd0a7e0568c450c824d1a22c1fe",
       "installMode": "copy"
     },
+    "remotion-code-motion-explainer": {
+      "source": "vibe-motion/remotion-code-motion-explainer",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "0e9873ec967df8b6b0c2e879ab985b452a9f11b5675fae60396fca409554d70e",
+      "installMode": "copy"
+    },
     "ruler-progress-render": {
       "source": "vibe-motion/skills",
       "sourceType": "github",

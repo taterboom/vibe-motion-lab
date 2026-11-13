@@ -1,0 +1,219 @@
+{
+  "generatedAt": "2026-11-13T06:08:50.993Z",
+  "pass": true,
+  "checks": [
+    {
+      "name": "beats contiguous 0..N",
+      "pass": true,
+      "detail": "8 beats, N=660"
+    },
+    {
+      "name": "contact frames squash 0.70",
+      "pass": true,
+      "detail": "contacts=[0,30]"
+    },
+    {
+      "name": "x monotonic",
+      "pass": true,
+      "detail": "x0=140 x59=1123.3"
+    },
+    {
+      "name": "no NaN",
+      "pass": true,
+      "detail": "0 bad frames"
+    },
+    {
+      "name": "persistent objects never drop to 0 after entry",
+      "pass": true,
+      "detail": "{\"chip.opacity\":14,\"fn.opacity\":89,\"values4.panelOpacity\":174,\"scene.open\":284,\"browser.in\":370,\"strip.titleIn\":370,\"ffmpeg.in\":449}"
+    },
+    {
+      "name": "chip max step per frame < 40px",
+      "pass": true,
+      "detail": "31.1 px"
+    },
+    {
+      "name": "hold: values equal at N-30 and N-1",
+      "pass": true,
+      "detail": ""
+    }
+  ],
+  "samples": [
+    {
+      "f": 0,
+      "beat": "b1-hook",
+      "d": 0,
+      "x": 140,
+      "squash": 0.7,
+      "camera": 1
+    },
+    {
+      "f": 30,
+      "beat": "b1-hook",
+      "d": 9,
+      "x": 290,
+      "squash": 1,
+      "camera": 1.009
+    },
+    {
+      "f": 60,
+      "beat": "b1-hook",
+      "d": 24,
+      "x": 540,
+      "squash": 1,
+      "camera": 1.053
+    },
+    {
+      "f": 90,
+      "beat": "b2-frame-in",
+      "d": 39,
+      "x": 790,
+      "squash": 1,
+      "camera": 1.108
+    },
+    {
+      "f": 120,
+      "beat": "b2-frame-in",
+      "d": 54,
+      "x": 1040,
+      "squash": 1,
+      "camera": 1.146
+    },
+    {
+      "f": 150,
+      "beat": "b2-frame-in",
+      "d": 9,
+      "x": 290,
+      "squash": 1,
+      "camera": 1.009
+    },
+    {
+      "f": 180,
+      "beat": "b3-values",
+      "d": 24,
+      "x": 540,
+      "squash": 1,
+      "camera": 1.053
+    },
+    {
+      "f": 210,
+      "beat": "b3-values",
+      "d": 39,
+      "x": 790,
+      "squash": 1,
+      "camera": 1.108
+    },
+    {
+      "f": 240,
+      "beat": "b3-values",
+      "d": 54,
+      "x": 1040,
+      "squash": 1,
+      "camera": 1.146
+    },
+    {
+      "f": 270,
+      "beat": "b4-scene",
+      "d": 9,
+      "x": 290,
+      "squash": 1,
+      "camera": 1.009
+    },
+    {
+      "f": 300,
+      "beat": "b4-scene",
+      "d": 24,
+      "x": 540,
+      "squash": 1,
+      "camera": 1.053
+    },
+    {
+      "f": 330,
+      "beat": "b4-scene",
+      "d": 39,
+      "x": 790,
+      "squash": 1,
+      "camera": 1.108
+    },
+    {
+      "f": 360,
+      "beat": "b5-capture",
+      "d": 0,
+      "x": 140,
+      "squash": 0.7,
+      "camera": 1
+    },
+    {
+      "f": 390,
+      "beat": "b5-capture",
+      "d": 30,
+      "x": 640,
+      "squash": 0.7,
+      "camera": 1.075
+    },
+    {
+      "f": 420,
+      "beat": "b5-capture",
+      "d": 59,
+      "x": 1123.3,
+      "squash": 0.958,
+      "camera": 1.15
+    },
+    {
+      "f": 450,
+      "beat": "b6-encode",
+      "d": 59,
+      "x": 1123.3,
+      "squash": 0.958,
+      "camera": 1.15
+    },
+    {
+      "f": 480,
+      "beat": "b6-encode",
+      "d": 59,
+      "x": 1123.3,
+      "squash": 0.958,
+      "camera": 1.15
+    },
+    {
+      "f": 510,
+      "beat": "b7-parallel",
+      "d": 59,
+      "x": 1123.3,
+      "squash": 0.958,
+      "camera": 1.15
+    },
+    {
+      "f": 540,
+      "beat": "b7-parallel",
+      "d": 59,
+      "x": 1123.3,
+      "squash": 0.958,
+      "camera": 1.15
+    },
+    {
+      "f": 570,
+      "beat": "b7-parallel",
+      "d": 59,
+      "x": 1123.3,
+      "squash": 0.958,
+      "camera": 1.15
+    },
+    {
+      "f": 600,
+      "beat": "b8-check",
+      "d": 8,
+      "x": 273.3,
+      "squash": 1,
+      "camera": 1.007
+    },
+    {
+      "f": 630,
+      "beat": "b8-check",
+      "d": 59,
+      "x": 1123.3,
+      "squash": 0.958,
+      "camera": 1.15
+    }
+  ]
+}

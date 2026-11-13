@@ -1,0 +1,73 @@
+# 镜头库自动验收
+
+- 结果：通过
+- 镜头清单：63
+- 注册 Composition：65
+- SRT 字幕段：5
+
+## 错误
+
+## 提醒
+- talking-head-callout: 预览尚未生成
+- data-counter: 预览尚未生成
+- kinetic-statement: 预览尚未生成
+- reference-card-stack: 预览尚未生成
+- split-comparison: 预览尚未生成
+- story-timeline: 预览尚未生成
+- masked-media-reveal: 预览尚未生成
+- karaoke-caption: 预览尚未生成
+- before-after-wipe: 预览尚未生成
+- whip-pan-transition: 预览尚未生成
+- audio-pulse: 预览尚未生成
+- metric-recap: 预览尚未生成
+- notification-stack: 预览尚未生成
+- lower-third: 预览尚未生成
+- brand-hold-end-card: 预览尚未生成
+- official-word-cascade: 预览尚未生成
+- official-audiogram-card: 预览尚未生成
+- official-music-visualizer: 预览尚未生成
+- official-overlay-sticker: 预览尚未生成
+- official-code-walkthrough: 预览尚未生成
+- official-milestone-stream: 预览尚未生成
+- official-caption-focus: 预览尚未生成
+- official-prompt-story: 预览尚未生成
+- official-device-showcase: 预览尚未生成
+- wide-aroll-clean: 预览尚未生成
+- wide-aroll-punch-in: 预览尚未生成
+- wide-broll-full-cover: 预览尚未生成
+- wide-broll-picture-in-picture: 预览尚未生成
+- wide-evidence-stack: 预览尚未生成
+- wide-screen-demo: 预览尚未生成
+- wide-data-sidebar: 预览尚未生成
+- wide-chapter-transition: 预览尚未生成
+- wide-company-orbit: 预览尚未生成
+- wide-industry-map: 预览尚未生成
+- wide-relationship-focus: 预览尚未生成
+- wide-source-document: 预览尚未生成
+- wide-evidence-bridge: 预览尚未生成
+- wide-presenter-pip-evidence: 预览尚未生成
+- wide-knowledge-world: 预览尚未生成
+- srt-driven-video: 预览尚未生成
+- wide-elastic-key-point: 预览尚未生成
+- wide-ruler-chapter-progress: 预览尚未生成
+- wide-evidence-ticker: 预览尚未生成
+- wide-spotlight-reveal: 预览尚未生成
+- wide-timeline-preview-compare: 预览尚未生成
+- wide-process-pill-builder: 预览尚未生成
+- wide-hud-chapter-title: 预览尚未生成
+- wide-exploded-workflow-board: 预览尚未生成
+- wide-tutorial-spotlight: 预览尚未生成
+- wide-presenter-media-cards: 预览尚未生成
+- wide-causal-tag-map: 预览尚未生成
+- wide-giant-keyword-backdrop: 预览尚未生成
+- ui-ae-neon-path-system: 预览尚未生成
+- ui-ae-neon-path-reconstruction-v8: 预览尚未生成
+- ui-ae-neon-message-journey: 预览尚未生成
+- ui-ae-prompt-agent-flow: 预览尚未生成
+- ui-ae-card-swarm-timeline: 预览尚未生成
+- ui-ae-product-grid-world: 预览尚未生成
+- ui-ae-voice-persona-flow: 预览尚未生成
+- ae-glass-dashboard: 预览尚未生成
+- ae-organic-gradient-field: 预览尚未生成
+- ae-saas-kinetic-type: 预览尚未生成
+- ae-website-perspective-showcase: 预览尚未生成

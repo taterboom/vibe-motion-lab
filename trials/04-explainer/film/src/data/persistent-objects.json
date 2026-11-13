@@ -1,0 +1,81 @@
+{
+  "note": "World coordinates in the 1920x1080 world container (before camera). All objects stay mounted from their entry to the end; state changes, not remounts.",
+  "objects": [
+    {
+      "id": "statement-bar",
+      "component": "StatementBar",
+      "world": {"x": 96, "y": 54, "w": 1728, "h": 96},
+      "statesByBeat": {"b1..b8": "text = beat.statement; old text slides up and fades over 10 frames"},
+      "entry": "b1 frame 4", "exit": "never",
+      "handoff": "text swap at every beat start",
+      "audioCue": null,
+      "a11yLabel": "当前讲到的那一句"
+    },
+    {
+      "id": "frame-chip",
+      "component": "FrameChip",
+      "world": {"hook": {"x": 760, "y": 400, "w": 400, "h": 200}, "docked": {"x": 130, "y": 300, "w": 380, "h": 80}},
+      "statesByBeat": {
+        "b1": "center, large, counting",
+        "b2": "travels to docked slot on top of timeline-fn",
+        "b3-b4": "docked, counting (1 demo frame per 2 video frames)",
+        "b5": "label 截图中, counts 0..59 one per video frame",
+        "b6-b7": "holds 59, dimmed",
+        "b8": "sweeps 0..59 while the chart traces, then holds"
+      },
+      "entry": "b1", "exit": "never",
+      "handoff": "b1->b2 the same chip moves, not a new one",
+      "audioCue": null,
+      "a11yLabel": "帧号"
+    },
+    {
+      "id": "timeline-fn",
+      "component": "TimelineFn",
+      "world": {"x": 130, "y": 400, "w": 380, "h": 260},
+      "statesByBeat": {"b2": "assembles, lights on chip contact", "b3+": "lit; four code lines each tinted with its value color"},
+      "entry": "b2", "exit": "never", "handoff": "emits four wires to value-panel in b3"
+    },
+    {
+      "id": "value-panel",
+      "component": "ValuePanel",
+      "world": {"x": 580, "y": 300, "w": 420, "h": 360},
+      "statesByBeat": {"b3": "4 rows appear staggered, live numbers", "b4": "row pulses when it drives the ball", "b5-b7": "live with chip", "b8": "rows highlight; numbers sweep with the chart"},
+      "entry": "b3", "exit": "never", "handoff": "wires to scene-panel in b4"
+    },
+    {
+      "id": "scene-panel",
+      "component": "ScenePanel + DemoScene",
+      "world": {"x": 1080, "y": 300, "w": 744, "h": 420},
+      "statesByBeat": {"b4": "opens, ball drawn from values", "b5": "browser chrome wraps it", "b6-b7": "live", "b8": "ball fades, curve chart traces in the same viewport; chrome label switches to node·只算数值"},
+      "entry": "b4", "exit": "never", "handoff": "same viewport hosts the chart in b8"
+    },
+    {
+      "id": "browser-frame",
+      "component": "BrowserChrome",
+      "world": {"x": 1080, "y": 256, "w": 744, "h": 44},
+      "statesByBeat": {"b5": "slides down onto scene panel, REC dot + counter 已截 n/60", "b8": "label changes, REC dot grey"},
+      "entry": "b5", "exit": "never"
+    },
+    {
+      "id": "film-strip",
+      "component": "FilmStrip",
+      "world": {"x": 130, "y": 790, "w": 1240, "h": 120},
+      "statesByBeat": {"b5": "thumbnails 0000.png… drop in from the scene panel, newest at right", "b6": "slides right into ffmpeg-box", "b7": "splits into 3 worker lanes (y 730/820/910) refilled simultaneously"},
+      "entry": "b5", "exit": "never"
+    },
+    {
+      "id": "ffmpeg-box",
+      "component": "FfmpegBox",
+      "world": {"x": 1410, "y": 790, "w": 170, "h": 120},
+      "statesByBeat": {"b6": "appears, gears turn proportionally to progress", "b7+": "dim"},
+      "entry": "b6", "exit": "never"
+    },
+    {
+      "id": "video-file",
+      "component": "VideoFile",
+      "world": {"x": 1620, "y": 790, "w": 204, "h": 120},
+      "statesByBeat": {"b6": "progress fill 0->100%, label video.mp4", "b7+": "complete"},
+      "entry": "b6", "exit": "never"
+    }
+  ]
+}

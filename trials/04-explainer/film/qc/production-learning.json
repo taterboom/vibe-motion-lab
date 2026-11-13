@@ -1,0 +1,42 @@
+[
+  {
+    "issue": "frame chip moved 117px in one frame while docking",
+    "rootCause": "front-loaded expo ease (bezier .16,1,.3,1) over 32 frames for a 640px travel",
+    "fix": "ease-in-out quad over 40 frames (max step 31px)",
+    "prevention": "probe max per-frame displacement for travelling objects before rendering",
+    "verification": "qc/value-probe.json chip max step check",
+    "reusableCandidate": "probe-values.ts max-step check"
+  },
+  {
+    "issue": "empty thumbnail grid visible in the hook before it is introduced",
+    "rootCause": "slot borders drawn unconditionally; only the title was gated",
+    "fix": "gate whole FilmStrip container by its entry value",
+    "prevention": "gate containers, not children, by entry state",
+    "verification": "qc/stills/rep-45.png",
+    "reusableCandidate": null
+  },
+  {
+    "issue": "upper row frozen for ~5s during b6-b7 (dead zone, no focus cue)",
+    "rootCause": "demo frame held at 59 while action moved to the bottom strip",
+    "fix": "dim upper row to 0.45 in b6-b7, relight in b8",
+    "prevention": "motion-window review: every window needs one moving focal object",
+    "verification": "qc/windows/window-420-600.png",
+    "reusableCandidate": null
+  },
+  {
+    "issue": "text overflow: fn subtitle wrap; video panel count below border",
+    "rootCause": "fixed panel sizes with unmeasured text",
+    "fix": "shorter strings, whiteSpace nowrap, tighter margins",
+    "prevention": "render stills at max-information frames before motion",
+    "verification": "qc/stills/check-480.png",
+    "reusableCandidate": null
+  },
+  {
+    "issue": "demo contact fell between frames 29 and 30 (squash never reached 0.70 mid-bounce)",
+    "rootCause": "t = d/(period-1)",
+    "fix": "t = d/period so contacts land on integer frames 0 and 30",
+    "prevention": "assert key poses land on integer frames in the probe",
+    "verification": "probe check 'contact frames squash 0.70'",
+    "reusableCandidate": "probe-values.ts contact check"
+  }
+]

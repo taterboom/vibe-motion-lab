@@ -1,0 +1,31 @@
+{
+  "semanticActionResult": "pass",
+  "semanticActionResultHow": "self-judged by the agent against src/data/choreography-plan.json; each of 8 beats has a performer and a visible result on stills qc/stills/rep-*.png and qc/windows/*.png. No tool checks semantics.",
+  "persistentObjectHandoff": "pass",
+  "persistentObjectHandoffHow": "numeric: scripts/probe-values.ts evaluates timeline() for all 660 frames; 7 persistent objects never drop to opacity 0 after entry (qc/value-probe.json). Visual: window sheets show no remounts.",
+  "motionWindowReview": "pass after 1 fix",
+  "motionWindowReviewHow": "5 windows 0-150,120-300,270-450,420-600,570-660 (1s overlaps), 8 frames each, qc/windows/. Found dead zone b6-b7 (upper row frozen ~5s) -> dim upper row; re-rendered.",
+  "cueSync": "n/a",
+  "cueSyncHow": "no narration/subtitles; beat timeline in choreography-plan.json is the authority. Statement bar switches on beat startFrame (verified by probe: beats contiguous).",
+  "finalHold": {
+    "frameA": 631,
+    "frameB": 659,
+    "identical": true,
+    "how": "remotion still PNGs compared pixel-for-pixel: 0 different pixels. Decoded MP4 frames 631 vs 659 differ in ~7k pixels (H.264 encoding noise), recorded in qc-auto.json."
+  },
+  "determinism": {"frame": 400, "renders": 2, "identical": true},
+  "technical": {"width": 1920, "height": 1080, "fps": 30, "frames": 660, "duration": 22.0, "codec": "h264", "pixFmt": "yuvj420p", "audioStreams": 0, "pass": true},
+  "visualChecks": {
+    "textClipping": "manual on stills; fixed fn subtitle wrap, video panel overflow (x2). Remaining: chart legend crossed by squash dip line at frame 30.",
+    "safeArea": "manual; all objects inside x 96..1824, y 54..1020",
+    "contrast": "manual; dimmed states (0.45) intentionally low",
+    "smallestText": "18-20px at 1080p (code lines, thumb labels) - readable on desktop, small on phone",
+    "dataCorrectness": "values on screen are computed by the same demoTimeline() that draws the ball and chart; contact frames 0 and 30 squash 0.70 asserted in probe",
+    "missingAssets": "none (no external assets)",
+    "licensing": "no third-party assets; palette tokens from MIT shot-library"
+  },
+  "notes": [
+    "Gates in SKILL.md are prose checklists; none ships a script. All automated checks here (probe-values.ts, qc.py) were written by the agent for this run.",
+    "Frame 0 is fully black (fade-in starts at frame 0)."
+  ]
+}

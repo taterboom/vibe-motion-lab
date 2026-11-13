@@ -71,7 +71,7 @@ vibe-motion-lab/
     - 自带实现的：`colorize`、`remotion-candlestick`、`remotion-3d-ticker`、`remotion-vinyl-player`、`light-spotlight-render`、`printed-curtain-render`
     - 先克隆外部工程再渲染的：`fisheye-motion`、`wechat-2d-render`、`ruler-progress-render`、`procedural-fish-render`、`threejs-earth-render`、`3d-chladni-render`、`claude-typer`
   - `disney-animation-rule-skill` 没有自带示例。用法是在别的任务里叫它：同一个小动作（比如一个角色跳一下）做两遍，一遍不用它，一遍用它，并排对比。
-- [ ] **1.4 讲解片 remotion-code-motion-explainer**
+- [x] **1.4 讲解片 remotion-code-motion-explainer**（2026-11-13 完成，记录见 `trials/04-explainer/TRIAL.md`；用户评价待填）
   - `npx skills add vibe-motion/remotion-code-motion-explainer`。
   - 跑它带的镜头库：`cd assets/shot-library && npm install && npm run validate:shots && npm run test:bundle`，渲染几条有代表性的竖屏和横屏镜头。
   - 用 README 的示例提示词触发一次，看它的六步流程和每步的关卡实际怎么走。

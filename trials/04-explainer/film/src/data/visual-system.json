@@ -1,0 +1,44 @@
+{
+  "conceptAngle": "一张深色工作台上的一条流水线：同一个帧号从左边进去，每一站都当场亮出自己的产物（数值、画面、图片、视频），最后流水线自己证明它可以拆开并行、也可以不出图就检查。",
+  "canvas": {"width": 1920, "height": 1080, "fps": 30},
+  "grid": {"unit": 10, "columns": "free; objects snap to 10px", "safeArea": {"x": 96, "top": 54, "bottom": 60}},
+  "spacing": {"panelGap": 70, "panelPadding": 28, "radius": 22},
+  "typography": {
+    "zh": "PingFang SC, Hiragino Sans GB, sans-serif",
+    "code": "Menlo, SFMono-Regular, monospace",
+    "statement": {"size": 52, "weight": 800},
+    "panelTitle": {"size": 28, "weight": 800},
+    "label": {"size": 24, "weight": 600},
+    "code": {"size": 24},
+    "minimum": 20
+  },
+  "colorSemantics": {
+    "background": "#10120f",
+    "surface": "#1c1f1a",
+    "surfaceLine": "#353a34",
+    "text": "#fffdf7",
+    "muted": "#aeb5a7",
+    "frameNumber": "#c9f36a",
+    "valueX": "#6ab7ff",
+    "valueSquash": "#ff7658",
+    "valueColor": "#ffd464",
+    "valueCamera": "#b59cff",
+    "capture": "#ffffff",
+    "videoResult": "#c9f36a",
+    "rule": "frame number is always lime; each value keeps its own color everywhere it appears (row, wire, chart curve); saturated color only for these semantic roles"
+  },
+  "depth": "flat panels with one shadow level; dimmed = opacity 0.28 + desaturate",
+  "camera": "world container; starts scale 1.18 centred on the left (frame chip + function), eases to 1.0 by b4 when the scene panel opens; static afterwards",
+  "motionCurves": {
+    "panel": "Easing.bezier(0.16, 1, 0.3, 1) over 18-24 frames (heavy, slow settle)",
+    "chip": "spring damping 18 mass 0.9 (light, crisp)",
+    "wire": "linear stroke draw over 14 frames",
+    "valueRow": "stagger 8 frames, 12-frame rise"
+  },
+  "representativeStaticFrames": {
+    "hook": 45,
+    "mostComplex": 400,
+    "ending": 645,
+    "heroComposition": "HeroFrame (all objects at max information, rendered before any entrance work)"
+  }
+}
