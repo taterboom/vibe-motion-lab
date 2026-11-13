@@ -9,3 +9,5 @@
 | pop.mp3 | 447910 | Plop! | Breviceps | 转单声道 |
 | tick.mp3 | 211203 | assymetric_tick.wav | Diboz | 取前 0.3 秒 |
 | clink.mp3 | 233715 | Bottles clink 1.wav | beansqueso31 | 取第一下碰杯（0.2–1.15 秒），尾部淡出 |
+| key.mp3 | 640365 | iPhone text type keypress keyboard | （Freesound） | 气泡版追加：取 0.29–0.38 秒单个按键，转单声道，尾部淡出 |
+| strike.mp3 | 211247 | Scribble | （Freesound） | 气泡版追加：取 0.62–1.04 秒一笔，高通 300Hz，+20dB，首尾淡入淡出 |

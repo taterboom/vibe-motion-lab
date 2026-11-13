@@ -32,3 +32,4 @@ trials/07-auto-motion/codex-run.log
 # 2B：asakafe 拷来的位图立绘（用户不用，原件在 asakafe）
 trials/2b-asakafe/*/src/assets/chars/
 trials/2b-asakafe/*/src/assets/izakaya_bg.png
+!trials/2b-asakafe/*/src/assets/sfx/*.mp3

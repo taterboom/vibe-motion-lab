@@ -1,174 +1,111 @@
-import React, {useEffect, useState} from 'react';
-import {getAudioData} from '@remotion/media-utils';
-import {Easing, continueRender, delayRender, interpolate, spring, staticFile, useCurrentFrame} from 'remotion';
-import {Puppet, looks, restArm, type Arm} from './Puppet';
-import {Layer, scenes} from './scenes';
+import React from 'react';
+import {useCurrentFrame} from 'remotion';
+import {Card} from './Card';
+import {prog, track, ease} from './anim';
+import {BUCHO, YOU, anchorsOf, showAt, type Emote} from './perform';
+import {Puppet, looks} from './Puppet';
+import {SetBack, SetTable} from './Set';
 import {pick} from './text';
-import {FPS, color, font, stage} from './theme';
-import type {CastMember, Clips, Emote, Episode, Expr, Segment, SegmentKind} from './types';
+import {FPS, K0, color, font, stage} from './theme';
+import type {Episode, Segment} from './types';
+import {mouthOpen, type Waves} from './waves';
 
-type Wave = Awaited<ReturnType<typeof getAudioData>>;
-
-/** 学习者那个角色。默认演出表里「你」和「其他人」各一列，头顶符号默认冒在「你」头上 */
-const LEARNER = 'you';
-
-/** 默认演出表：每个环节里「你」和其他人的表情、头顶符号。按环节类型写，所以三段结构不变时对每一集都成立；
- *  某一集要改，在 tts/epNNN.json 的 stage.beats 里只写不同的部分 */
-const defaultBeats: Record<SegmentKind, {you: Expr; others: Expr; emote?: Emote}> = {
-  ask: {others: 'smile', you: 'neutral'},
-  wait: {others: 'smile', you: 'surprised', emote: 'dots'},
-  host: {others: 'smile', you: 'troubled', emote: 'q'},
-  hostPause: {others: 'smile', you: 'troubled', emote: 'q'},
-  play1: {others: 'smile', you: 'smile'},
-  gap: {others: 'smile', you: 'smile'},
-  play2: {others: 'smile', you: 'smile'},
-  shadow: {others: 'smile', you: 'smile'},
-  ask2: {others: 'smile', you: 'neutral'},
-  countdown: {others: 'smile', you: 'troubled', emote: 'sweat'},
-  answer: {others: 'smile', you: 'smile'},
-  beforeReact: {others: 'smile', you: 'happy'},
-  react: {others: 'happy', you: 'smile'},
-  tail: {others: 'happy', you: 'happy'},
+/** 当前时刻在哪一段 */
+export const segAt = (segments: Segment[], t: number) => {
+  const i = Math.max(0, segments.findIndex((s) => t < s.start + s.dur));
+  return {i, seg: segments[i] ?? segments[segments.length - 1]};
 };
 
-const SCALE = 1.2;
-const CENTER = 504;
-
-/** 随环节平滑变化的量：镜头、压暗、举起手里的东西。说话人的前倾单独按人算 */
-type Pose = {zoom: number; panX: number; dim: number; raise: number};
-const poseOf = (s: Segment, speaker?: CastMember): Pose => ({
-  zoom: speaker ? 1.08 : 1,
-  panX: speaker ? (CENTER - speaker.x) * 0.19 : 0,
-  dim: s.kind === 'host' || s.kind === 'hostPause' ? 0.5 : 0,
-  raise: s.kind === 'react' || s.kind === 'tail' ? 1 : 0,
-});
-
-/** 场景与人物：整集常驻，按 episode.stage 的声明摆场景和人，按当前环节换演出。口型跟当前那句音频的音量走 */
-export const Stage: React.FC<{dir: string; episode: Episode; clips: Clips; segments: Segment[]}> = ({dir, episode, clips, segments}) => {
+/** 舞台：场景 + 两个纸偶 + 镜头 + 段 ② 的教学卡片。所有状态来自 perform.ts 的 showAt(t) */
+export const Stage: React.FC<{episode: Episode; segments: Segment[]; waves: Waves}> = ({episode, segments, waves}) => {
   const frame = useCurrentFrame();
-  const waves = useWaves(dir, clips);
-  const spec = episode.stage;
-  const scene = spec ? scenes[spec.scene] : undefined;
-  if (!spec || !scene) {
-    // 没声明画面的集：留一块空画框，文字照常
-    return <div style={{position: 'absolute', left: stage.left, top: stage.top, width: stage.width, height: stage.height, borderRadius: 36, backgroundColor: color.faint}} />;
-  }
-
   const t = frame / FPS;
-  const i = Math.max(0, segments.findIndex((s) => t < s.start + s.dur));
-  const seg = segments[i] ?? segments[segments.length - 1];
-  const prev = segments[i - 1] ?? seg;
-  const member = (s: Segment) => {
-    const role = s.audio ? pick(episode, s.audio)?.role : undefined;
-    return spec.cast.find((m) => m.role === role);
-  };
-  const speaker = member(seg);
-  const wasSpeaking = member(prev);
-  const local = frame - Math.round(seg.start * FPS);
-
+  const A = anchorsOf(segments);
+  const {seg} = segAt(segments, t);
+  const speaker = seg.audio ? pick(episode, seg.audio)?.role : undefined;
   // 口型两帧一换，像逐张换嘴的纸偶动画
   const stepped = Math.max(0, (Math.floor(frame / 2) * 2) / FPS - seg.start);
-  const open = seg.audio && waves?.[seg.audio] ? mouthOpen(waves[seg.audio], stepped) : 0;
-
-  const ease = interpolate(local, [0, 12], [0, 1], {extrapolateRight: 'clamp', easing: Easing.inOut(Easing.cubic)});
-  const a = poseOf(prev, wasSpeaking);
-  const b = poseOf(seg, speaker);
-  const mix = (k: keyof Pose) => a[k] + (b[k] - a[k]) * ease;
-
-  const base = defaultBeats[seg.kind];
-  const over = spec.beats?.[seg.kind];
-  const exprOf = (role: string): Expr => over?.expr?.[role] ?? (role === LEARNER ? base.you : base.others);
-  const emote = over && 'emote' in over ? over.emote : base.emote;
-  const emoteOn = spec.cast.find((m) => m.role === (over?.emoteOn ?? LEARNER));
-
-  const intro = interpolate(frame, [0, 24], [1.06, 1], {extrapolateRight: 'clamp', easing: Easing.out(Easing.cubic)});
-  const lookOf = (m: CastMember) => looks[m.look === LEARNER ? (/_f$/.test(dir) ? 'youF' : 'youM') : m.look] ?? looks.youM;
-  const yOf = (m: CastMember) => m.y ?? scene.seatY;
-
+  const open = seg.audio ? mouthOpen(waves?.[seg.audio], stepped) : 0;
+  const show = showAt(t, A, open, open, speaker);
+  const {cam} = show;
+  const k = K0 * cam.z;
+  const world = `translate(${stage.width / 2} ${stage.height / 2}) scale(${k}) translate(${-cam.cx} ${-cam.cy})`;
+  // 进入教学段时场景稍微压暗，卡片更突出；③ 再亮回来
+  const dim = track(t, [[A.host + 0.1, 0], [A.host + 0.7, 0.16, ease.inOut], [A.ask2, 0.16], [A.ask2 + 0.4, 0, ease.inOut]]);
   return (
-    <div style={{position: 'absolute', left: stage.left, top: stage.top, width: stage.width, height: stage.height, borderRadius: 36, overflow: 'hidden', backgroundColor: color.faint}}>
-      {/* 镜头：整块画面一起缩放平移 */}
-      <div style={{position: 'absolute', inset: 0, transformOrigin: '50% 50%', transform: `scale(${mix('zoom') * intro}) translateX(${mix('panX')}px)`}}>
-        <scene.Back frame={frame} variant={spec.variant} />
-        <Layer>
-          {spec.cast.map((m, k) => {
-            const talking = m === speaker;
-            // 说话的人朝对方前倾；开口和收回都缓动
-            const lean = m.face * (1.5 + 4 * ((wasSpeaking === m ? 1 - ease : 0) + (talking ? ease : 0)));
-            const raise = m.holding ? mix('raise') : 0;
-            const held: Arm = {
-              elbow: [m.face * (150 + 14 * raise), -122 - 26 * raise],
-              hand: [m.face * (162 + 48 * raise), -212 - 76 * raise],
-            };
-            return (
-              <Puppet key={m.role} look={lookOf(m)} x={m.x} y={yOf(m)} scale={m.scale ?? SCALE} face={m.face}
-                expr={exprOf(m.role)} mouth={talking ? open : 0} blink={blink(frame, k + 1)}
-                bob={Math.sin(frame / 22 + k * 2) * 2.5 - (talking ? open * 4 : 0)} lean={lean} tilt={m.face * (talking ? 3 : 1)}
-                armL={m.holding && m.face === -1 ? held : restArm(-1)} armR={m.holding && m.face === 1 ? held : restArm(1)}
-                holding={m.holding ? {side: m.face, item: m.holding} : undefined} />
-            );
-          })}
-        </Layer>
-        <scene.Front />
-        {emote && emoteOn ? (
-          <Layer>
-            <EmoteMark kind={emote} x={emoteOn.x - emoteOn.face * 132} y={yOf(emoteOn) - 475 * (emoteOn.scale ?? SCALE)} frame={local} />
-          </Layer>
-        ) : null}
-      </div>
-      <div style={{position: 'absolute', inset: 0, backgroundColor: color.ink, opacity: mix('dim')}} />
+    <div style={{position: 'absolute', left: stage.left, top: stage.top, width: stage.width, height: stage.height, borderRadius: 40, overflow: 'hidden', backgroundColor: color.faint, boxShadow: '0 10px 30px rgba(80,50,20,0.16)'}}>
+      <svg width={stage.width} height={stage.height} viewBox={`0 0 ${stage.width} ${stage.height}`} style={{position: 'absolute', inset: 0}}>
+        <g transform={world}>
+          <SetBack t={t} />
+          <Puppet look={looks.bucho} x={BUCHO.x} y={BUCHO.y} scale={BUCHO.scale} pose={show.bucho} />
+          <Puppet look={looks.youF} x={YOU.x} y={YOU.y} scale={YOU.scale} pose={show.you} />
+          <SetTable />
+          {show.emotes.map((e, i) => <EmoteMark key={i} e={e} />)}
+        </g>
+        <rect width={stage.width} height={stage.height} fill={color.ink} opacity={dim} />
+      </svg>
+      <Card t={t} A={A} y={show.card} />
     </div>
   );
 };
 
-/** 眨眼：每人周期不同，一次 4 帧 */
-const blink = (frame: number, seed: number) => (frame + seed * 37) % (92 + seed * 19) < 4;
-
-/** 一句音频在 t 秒附近的音量 → 开口量 0–1，太小算闭嘴 */
-const mouthOpen = (w: Wave, t: number) => {
-  const ch = w.channelWaveforms[0];
-  const from = Math.floor(t * w.sampleRate);
-  const to = Math.min(ch.length, from + Math.floor(w.sampleRate / 15));
-  if (to <= from) return 0;
-  let sum = 0;
-  for (let k = from; k < to; k++) sum += ch[k] * ch[k];
-  const rms = Math.sqrt(sum / (to - from));
-  const v = Math.min(1, rms / 0.16);
-  return v < 0.12 ? 0 : Math.ceil(v * 3) / 3;
-};
-
-/** 读入本集所有片段的波形；读完之前挂起渲染 */
-const useWaves = (dir: string, clips: Clips) => {
-  const [waves, setWaves] = useState<Record<string, Wave> | null>(null);
-  const [handle] = useState(() => delayRender('load clip waveforms'));
-  useEffect(() => {
-    const tags = Object.keys(clips.clips);
-    Promise.all(tags.map((tag) => getAudioData(staticFile(`${dir}/${clips.clips[tag].file}`))))
-      .then((list) => setWaves(Object.fromEntries(tags.map((tag, k) => [tag, list[k]]))))
-      .catch((e) => console.error('waveform load failed, mouths stay closed', e))
-      .finally(() => continueRender(handle));
-  }, [dir, clips, handle]);
-  return waves;
-};
-
-const EmoteMark: React.FC<{kind: Emote; x: number; y: number; frame: number}> = ({kind, x, y, frame}) => {
-  const pop = spring({frame, fps: FPS, config: {damping: 10, stiffness: 180}});
-  const float = Math.sin(frame / 9) * 4;
+const EmoteMark: React.FC<{e: Emote}> = ({e}) => {
+  const pop = track(e.age, [[0, 0], [0.1, 1.25, ease.out], [0.22, 0.95, ease.inOut], [0.32, 1]]);
+  const fade = 1 - prog(e.k, 0.85, 1);
+  const float = Math.sin(e.age * 5) * 4;
+  if (e.kind === 'sparkle') {
+    return (
+      <g opacity={fade}>
+        {[[0, 0, 1], [70, 40, 0.7], [-50, 60, 0.6]].map(([dx, dy, s], i) => {
+          const tw = Math.max(0, Math.sin((e.age * 2.2 - i * 0.18) * Math.PI));
+          return <Star key={i} x={e.x + dx} y={e.y + dy - e.age * 20} r={22 * s * tw} />;
+        })}
+      </g>
+    );
+  }
+  if (e.kind === 'splash') {
+    return (
+      <g>
+        {[[-1, -1.1], [0.2, -1.5], [1, -1]].map(([vx, vy], i) => {
+          const a = e.age;
+          const x = e.x + vx * 160 * a;
+          const y = e.y + vy * 240 * a + 900 * a * a;
+          return <ellipse key={i} cx={x} cy={y} rx={7} ry={9} fill="#F6C451" stroke="#fff" strokeWidth={3} opacity={1 - e.k} />;
+        })}
+        {e.age < 0.18 ? (
+          <g opacity={1 - e.age / 0.18} stroke="#FFFDF7" strokeWidth={6} strokeLinecap="round">
+            {[-60, -20, 20, 60].map((a) => {
+              const r = (a - 90) * (Math.PI / 180);
+              const r0 = 28 + e.age * 120;
+              return <line key={a} x1={e.x + Math.cos(r) * r0} y1={e.y + Math.sin(r) * r0} x2={e.x + Math.cos(r) * (r0 + 26)} y2={e.y + Math.sin(r) * (r0 + 26)} />;
+            })}
+          </g>
+        ) : null}
+      </g>
+    );
+  }
   return (
-    <g transform={`translate(${x} ${y + float}) scale(${pop})`}>
-      {kind === 'q' ? (
-        <text textAnchor="middle" y={30} fontFamily={font.ja} fontSize={110} fontWeight={800} fill="#3F6FB5" stroke="#fff" strokeWidth={8} paintOrder="stroke">?</text>
-      ) : kind === 'sweat' ? (
-        <path d="M 0 -44 Q 34 4 0 26 Q -34 4 0 -44 Z" fill="#6DB6E8" stroke="#fff" strokeWidth={6} />
+    <g transform={`translate(${e.x} ${e.y + float}) scale(${pop})`} opacity={fade}>
+      {e.kind === 'bang' ? (
+        <text textAnchor="middle" y={36} fontFamily={font.ja} fontSize={120} fontWeight={900} fill={color.bad} stroke="#fff" strokeWidth={10} paintOrder="stroke">!</text>
+      ) : e.kind === 'q' ? (
+        <text textAnchor="middle" y={36} fontFamily={font.ja} fontSize={110} fontWeight={800} fill="#3F6FB5" stroke="#fff" strokeWidth={9} paintOrder="stroke" transform={`rotate(${Math.sin(e.age * 3) * 8})`}>?</text>
       ) : (
         <>
-          <rect x={-66} y={-34} width={132} height={64} rx={32} fill="#fff" />
-          <path d="M -40 26 L -58 52 L -16 28 Z" fill="#fff" />
-          {[-32, 0, 32].map((dx, k) => (
-            <circle key={dx} cx={dx} cy={-2} r={9} fill={color.muted} opacity={frame > k * 8 ? 1 : 0.2} />
-          ))}
+          <rect x={-72} y={-38} width={144} height={72} rx={36} fill="#fff" />
+          <path d="M -44 28 L -64 58 L -18 32 Z" fill="#fff" />
+          {[-34, 0, 34].map((dx, k) => {
+            const on = ((e.age * 3 - k * 0.33) % 1 + 1) % 1;
+            return <circle key={dx} cx={dx} cy={-2 - Math.max(0, Math.sin(on * Math.PI)) * 6} r={9} fill={color.muted} opacity={0.35 + 0.65 * Math.max(0, Math.sin(on * Math.PI))} />;
+          })}
         </>
       )}
     </g>
   );
+};
+
+const Star: React.FC<{x: number; y: number; r: number}> = ({x, y, r}) => {
+  if (r <= 0.5) return null;
+  const q = r * 0.32;
+  return <path d={`M ${x} ${y - r} Q ${x + q} ${y - q} ${x + r} ${y} Q ${x + q} ${y + q} ${x} ${y + r} Q ${x - q} ${y + q} ${x - r} ${y} Q ${x - q} ${y - q} ${x} ${y - r} Z`} fill="#F6C451" stroke="#fff" strokeWidth={3} />;
 };

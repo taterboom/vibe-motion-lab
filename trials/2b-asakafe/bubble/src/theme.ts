@@ -9,6 +9,15 @@ export const color = {
   muted: '#8A8178',
   accent: '#B5422C',
   faint: '#D9CDB4',
+  // 气泡版追加：居酒屋夜色（暖帘的藍、灯笼的朱、啤酒的琥珀）
+  paper: '#FFFBF2',
+  indigo: '#26314A',
+  indigoSoft: '#46557A',
+  amber: '#E2A13B',
+  field: '#F1E6CF',
+  line: '#E4D6B8',
+  pattern: '#EADDC2',
+  onAccent: '#FFFFFF',
 };
 
 // 渲染用本机 Chrome，macOS 系统字体可直接用；其他机器回落到 Noto。

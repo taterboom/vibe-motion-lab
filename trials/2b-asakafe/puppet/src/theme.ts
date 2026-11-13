@@ -9,6 +9,12 @@ export const color = {
   muted: '#8A8178',
   accent: '#B5422C',
   faint: '#D9CDB4',
+  paper: '#FFFCF4',
+  bucho: '#A8483A',
+  you: '#C7862A',
+  teal: '#2F8F83',
+  good: '#4E8F5A',
+  bad: '#C8452F',
 };
 
 // 渲染用本机 Chrome，macOS 系统字体可直接用；其他机器回落到 Noto。
@@ -19,19 +25,30 @@ export const font = {
 
 export const PAD = 72;
 
-/** 固定槽位：所有段落的文字都锚在这些位置，切换时不跳 */
+/** 固定槽位：所有段落的文字都锚在这些位置，切换时不跳（y 为顶边） */
 export const slot = {
-  brand: 120,      // 栏目名
-  phase: 200,      // ①②③ + 环节名
-  mainTop: 1120,   // 主文字区（主句 + 释义）垂直居中于此区
-  mainHeight: 430,
-  cue: 1570,       // 跟读提示
-  hook: 1650,      // 一行字
-  foot: 1790,      // 标题
+  brand: 44,
+  progress: 112,
+  chip: 1314,
+  mainTop: 1376,
+  mainHeight: 268,
+  zh: 1652,
+  hint: 1738,
+  foot: 1846,
 };
 
-/** 场景画面：栏目名与主文字区之间的一块圆角画框，人物和背景画在里面 */
-export const stage = {left: 36, top: 280, width: 1008, height: 800};
+/** 场景画框：栏目名下方占画面主体的圆角画框 */
+export const stage = {left: 28, top: 196, width: 1024, height: 1090};
+/** 世界（场景 1008×800）到画框的基础比例：z=1 时世界高度正好铺满画框 */
+export const K0 = 1.3;
 
 /** 中日文折行：任意字间可断，标点不上行首，两行尽量等长 */
 export const cjkWrap = {wordBreak: 'normal', lineBreak: 'strict', textWrap: 'balance'} as const;
+
+/** 两个 #RRGGBB 颜色按 k 混合 */
+export const mix = (a: string, b: string, k: number) => {
+  const p = (c: string, i: number) => parseInt(c.slice(1 + i * 2, 3 + i * 2), 16);
+  const h = (v: number) => Math.round(v).toString(16).padStart(2, '0');
+  const kk = Math.min(1, Math.max(0, k));
+  return '#' + [0, 1, 2].map((i) => h(p(a, i) + (p(b, i) - p(a, i)) * kk)).join('');
+};
