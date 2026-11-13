@@ -28,3 +28,4 @@ trials/05-starter/sessions/*.err
 trials/05-starter/sessions/s3-summary.txt
 trials/06-sound/.claude/
 trials/06-sound/sessions/*.jsonl
+trials/07-auto-motion/codex-run.log

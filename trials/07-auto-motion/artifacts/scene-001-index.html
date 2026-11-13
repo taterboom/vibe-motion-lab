@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1440" />
+    <title>scene-001 · 我 + vibe coding</title>
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Noto Sans SC"; src: url("assets/fonts/noto-sans-sc-subset.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+      @font-face { font-family: "JetBrains Mono"; src: url("assets/fonts/jetbrains-mono-latin.woff2") format("woff2"); font-weight: 100 900; font-display: block; }
+      :root {
+        --ground: #0c0d11;
+        --panel: #15171d;
+        --line: #262932;
+        --muted: #9a9fab;
+        --ink: #f2efe8;
+        --lime: #c8ff4d;
+        --orange: #ff6b35;
+        --font-cn: "Noto Sans SC", "JetBrains Mono", sans-serif;
+        --font-mono: "JetBrains Mono", monospace;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body {
+        width: 1080px; height: 1440px; overflow: hidden;
+        background: var(--ground);
+      }
+      #root {
+        position: relative; width: 1080px; height: 1440px; overflow: hidden;
+        font-family: var(--font-cn); color: var(--ink);
+      }
+      #stage { position: absolute; inset: 0; }
+      .abs { position: absolute; }
+      .mono { font-family: var(--font-mono); letter-spacing: 0.06em; }
+
+      /* ---------- background ---------- */
+      #bg {
+        position: absolute; inset: 0;
+        background:
+          radial-gradient(900px 700px at 50% 38%, #171a22 0%, rgba(12,13,17,0) 70%),
+          var(--ground);
+      }
+      #grid {
+        position: absolute; inset: 0;
+        background-image:
+          linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px);
+        background-size: 60px 60px;
+        background-position: 0 0;
+      }
+
+      /* ---------- HUD / timeline ---------- */
+      #hud-left { left: 72px; top: 60px; font-size: 26px; color: var(--muted); display: flex; align-items: center; gap: 14px; }
+      #rec-dot { display: block; width: 14px; height: 14px; border-radius: 50%; background: var(--orange); }
+      #hud-right { right: 72px; top: 60px; font-size: 26px; color: var(--ink); font-variant-numeric: tabular-nums; }
+      #track { left: 72px; top: 128px; width: 936px; height: 2px; background: var(--line); }
+      #track-fill { position: absolute; left: 0; top: 0; width: 936px; height: 2px; background: var(--lime); transform-origin: 0 50%; }
+      .tick { position: absolute; top: -6px; width: 2px; height: 14px; background: var(--line); }
+      #playhead { left: 72px; top: 110px; width: 2px; height: 38px; }
+      #playhead-line { position: absolute; left: 0; top: 0; width: 2px; height: 38px; background: var(--lime); }
+      #playhead-knob { position: absolute; left: -7px; top: -8px; width: 16px; height: 16px; background: var(--lime); transform: rotate(45deg); }
+      #now-chip {
+        right: 72px; top: 152px; height: 40px; padding: 0 16px;
+        background: var(--lime); color: #0c0d11; border-radius: 6px;
+        font-size: 24px; font-weight: 700; display: flex; align-items: center;
+        transform-origin: 100% 0;
+      }
+      #sofar { left: 72px; top: 152px; height: 40px; display: flex; align-items: center; gap: 14px; }
+      #sofar-cn { font-size: 34px; font-weight: 600; color: var(--ink); }
+      #sofar-en { font-size: 24px; color: var(--muted); }
+
+      /* ---------- viewfinder ---------- */
+      #frame { left: 120px; top: 236px; width: 840px; height: 600px; }
+      .corner { position: absolute; width: 72px; height: 72px; border-color: var(--ink); border-style: solid; border-width: 0; }
+      #c-tl { left: 0; top: 0; border-left-width: 6px; border-top-width: 6px; border-top-left-radius: 14px; }
+      #c-tr { right: 0; top: 0; border-right-width: 6px; border-top-width: 6px; border-top-right-radius: 14px; }
+      #c-bl { left: 0; bottom: 0; border-left-width: 6px; border-bottom-width: 6px; border-bottom-left-radius: 14px; }
+      #c-br { right: 0; bottom: 0; border-right-width: 6px; border-bottom-width: 6px; border-bottom-right-radius: 14px; }
+
+      #screen {
+        position: absolute; left: 24px; top: 24px; width: 792px; height: 552px;
+        background: var(--panel); border-radius: 18px; overflow: hidden;
+        border: 2px solid #22252d;
+      }
+      #screen-glow {
+        position: absolute; left: 24px; top: 24px; width: 792px; height: 552px;
+        border-radius: 18px; border: 4px solid var(--lime);
+        box-shadow: 0 0 60px rgba(200,255,77,0.35);
+      }
+      #view-chip {
+        left: 48px; top: 44px; height: 48px; padding: 0 18px 0 14px; z-index: 5;
+        display: flex; align-items: center; gap: 10px;
+        background: rgba(12,13,17,0.85); border: 2px solid #2c3039; border-radius: 24px;
+        font-size: 24px; font-weight: 600;
+      }
+      #view-chip svg { display: block; width: 28px; height: 28px; }
+
+      /* mini composition inside the screen */
+      #s-sun { left: 470px; top: 120px; width: 300px; height: 300px; border-radius: 50%;
+        background: radial-gradient(circle at 35% 35%, #ff9a6b 0%, var(--orange) 55%, #d9481a 100%); }
+      #s-ring { left: 430px; top: 80px; width: 380px; height: 380px; border-radius: 50%; border: 2px dashed rgba(242,239,232,0.25); }
+      #s-h1 { left: 48px; top: 140px; width: 340px; height: 34px; border-radius: 8px; background: var(--ink); transform-origin: 0 50%; }
+      #s-h2 { left: 48px; top: 192px; width: 230px; height: 34px; border-radius: 8px; background: rgba(242,239,232,0.55); transform-origin: 0 50%; }
+      #s-h3 { left: 48px; top: 250px; width: 120px; height: 10px; border-radius: 5px; background: var(--lime); transform-origin: 0 50%; }
+      .s-bar { position: absolute; bottom: 64px; width: 56px; border-radius: 8px 8px 0 0; transform-origin: 50% 100%; }
+      #s-b1 { left: 48px; height: 90px; background: #3a3f4b; }
+      #s-b2 { left: 120px; height: 150px; background: #565c6b; }
+      #s-b3 { left: 192px; height: 210px; background: var(--lime); }
+      #s-wave { left: 300px; top: 370px; width: 300px; height: 80px; overflow: hidden; }
+      #s-wave svg { position: absolute; left: 0; top: 0; width: 600px; height: 80px; }
+      #s-tri { left: 590px; top: 238px; width: 0; height: 0; }
+      #s-tri svg { position: absolute; left: -30px; top: -34px; width: 70px; height: 68px; display: block; }
+      #s-base { left: 48px; bottom: 62px; width: 696px; height: 2px; background: #2f333d; transform-origin: 0 50%; }
+      #s-layers { right: 28px; top: 24px; font-size: 22px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+      #stamp {
+        left: 0; top: 808px; width: 1080px; height: 56px; z-index: 6;
+        display: flex; align-items: center; justify-content: center;
+        color: #0c0d11; font-size: 26px; font-weight: 700;
+      }
+
+      /* ---------- lockup ---------- */
+      .wire { position: absolute; top: 836px; width: 4px; height: 104px; transform-origin: 50% 100%; border-radius: 2px; }
+      #wire-me { left: 210px; background: var(--orange); }
+      #wire-vibe { left: 738px; background: var(--lime); }
+
+      #card-me {
+        left: 72px; top: 940px; width: 280px; height: 300px; border-radius: 24px;
+        background: var(--orange); color: #0c0d11; overflow: hidden;
+      }
+      #me-label { position: absolute; left: 26px; top: 22px; font-size: 22px; font-weight: 700; }
+      #me-glyph { position: absolute; left: 0; top: 60px; width: 280px; text-align: center; font-size: 168px; font-weight: 800; line-height: 1; }
+      #me-hand { position: absolute; right: 22px; bottom: 20px; width: 52px; height: 52px; }
+      #me-hand svg { display: block; width: 52px; height: 52px; }
+
+      #plus { left: 384px; top: 1062px; width: 56px; height: 56px; }
+      #plus::before, #plus::after { content: ""; position: absolute; background: var(--ink); border-radius: 4px; }
+      #plus::before { left: 0; top: 24px; width: 56px; height: 8px; }
+      #plus::after { left: 24px; top: 0; width: 8px; height: 56px; }
+
+      #card-vibe {
+        left: 472px; top: 940px; width: 536px; height: 300px; border-radius: 24px;
+        background: #111318; border: 2px solid var(--lime); overflow: hidden;
+      }
+      #vibe-head { position: absolute; left: 0; top: 0; width: 536px; height: 52px; border-bottom: 2px solid #22252d; display: flex; align-items: center; gap: 10px; padding-left: 22px; }
+      .dot { display: block; width: 12px; height: 12px; border-radius: 50%; background: #2f333d; }
+      #vibe-head .mono { margin-left: 12px; font-size: 20px; color: var(--muted); }
+      #prompt { position: absolute; left: 24px; top: 76px; height: 40px; display: flex; align-items: center; font-size: 28px; white-space: nowrap; }
+      #prompt .caret-sign { color: var(--lime); font-family: var(--font-mono); margin-right: 14px; font-weight: 700; }
+      #prompt .ch { display: inline-block; width: 28px; text-align: center; }
+      #chars { position: relative; display: flex; align-items: center; height: 40px; }
+      #cursor { position: absolute; left: 4px; top: 4px; width: 14px; height: 32px; background: var(--lime); }
+      #code { position: absolute; left: 24px; top: 132px; width: 488px; }
+      .cl { display: block; height: 12px; border-radius: 6px; margin-bottom: 12px; transform-origin: 0 50%; }
+      #vibe-title { position: absolute; left: 24px; bottom: 22px; display: flex; align-items: center; gap: 18px; }
+      #vibe-word { font-family: var(--font-mono); font-size: 46px; font-weight: 700; color: var(--lime); letter-spacing: -0.01em; }
+      #vibe-wave { position: relative; width: 120px; height: 40px; overflow: hidden; }
+      #vibe-wave svg { position: absolute; left: 0; top: 0; width: 240px; height: 40px; display: block; }
+
+      #stamp-pill { display: flex; align-items: center; gap: 10px; height: 56px; padding: 0 22px; background: var(--lime); border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+      #crosshair { left: 492px; top: 568px; width: 96px; height: 96px; }
+      #crosshair::before, #crosshair::after { content: ""; position: absolute; background: rgba(242,239,232,0.5); }
+      #crosshair::before { left: 0; top: 47px; width: 96px; height: 2px; }
+      #crosshair::after { left: 47px; top: 0; width: 2px; height: 96px; }
+      #foot-left { left: 72px; bottom: 76px; font-size: 24px; color: var(--muted); }
+      #foot-left b { color: var(--ink); font-weight: 600; }
+      #foot-right { right: 72px; bottom: 76px; font-size: 24px; color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="3.9" data-width="1080" data-height="1440">
+      <section id="stage" class="clip" data-start="0" data-duration="3.9" data-track-index="0">
+        <div id="bg"></div>
+        <div id="grid"></div>
+
+        <!-- HUD -->
+        <div id="hud-left" class="abs mono"><span id="rec-dot"></span><span>REC · SCENE 01</span></div>
+        <div id="hud-right" class="abs mono">00:00:00</div>
+        <div id="track" class="abs">
+          <div class="tick" style="left:0"></div>
+          <div class="tick" style="left:156px"></div>
+          <div class="tick" style="left:312px"></div>
+          <div class="tick" style="left:468px"></div>
+          <div class="tick" style="left:624px"></div>
+          <div class="tick" style="left:780px"></div>
+          <div class="tick" style="left:934px"></div>
+          <div id="track-fill"></div>
+        </div>
+        <div id="playhead" class="abs"><div id="playhead-line"></div><div id="playhead-knob"></div></div>
+        <div id="sofar" class="abs"><span id="sofar-cn">到目前为止</span><span id="sofar-en" class="mono">SO FAR</span></div>
+        <div id="now-chip" class="abs mono">NOW</div>
+
+        <!-- viewfinder -->
+        <div id="frame" class="abs">
+          <div id="crosshair" class="abs" style="left:372px;top:252px"></div>
+          <div id="screen">
+            <div id="s-ring" class="abs"></div>
+            <div id="s-sun" class="abs"></div>
+            <div id="s-h1" class="abs"></div>
+            <div id="s-h2" class="abs"></div>
+            <div id="s-h3" class="abs"></div>
+            <div id="s-b1" class="s-bar"></div>
+            <div id="s-b2" class="s-bar"></div>
+            <div id="s-b3" class="s-bar"></div>
+            <div id="s-base" class="abs"></div>
+            <div id="s-wave" class="abs">
+              <svg viewBox="0 0 600 80"><path d="M0 40 Q 37.5 0 75 40 T 150 40 T 225 40 T 300 40 T 375 40 T 450 40 T 525 40 T 600 40" fill="none" stroke="#c8ff4d" stroke-width="6" stroke-linecap="round"/></svg>
+            </div>
+            <div id="s-tri" class="abs">
+              <svg viewBox="0 0 70 68"><path d="M8 4 L66 34 L8 64 Z" fill="#0c0d11" stroke="#0c0d11" stroke-width="6" stroke-linejoin="round"/></svg>
+            </div>
+            <div id="s-layers" class="abs mono">LAYERS <span id="layer-n">00</span></div>
+          </div>
+          <div id="screen-glow"></div>
+          <div id="view-chip" class="abs">
+            <svg viewBox="0 0 28 28"><path d="M2 14 C 6 6, 22 6, 26 14 C 22 22, 6 22, 2 14 Z" fill="none" stroke="#f2efe8" stroke-width="2.4"/><circle cx="14" cy="14" r="4.5" fill="#c8ff4d"/></svg>
+            <span>你看到的画面</span>
+          </div>
+          <div id="c-tl" class="corner"></div>
+          <div id="c-tr" class="corner"></div>
+          <div id="c-bl" class="corner"></div>
+          <div id="c-br" class="corner"></div>
+        </div>
+
+        <!-- connectors -->
+        <div id="wire-me" class="wire"></div>
+        <div id="wire-vibe" class="wire"></div>
+
+        <!-- me -->
+        <div id="card-me" class="abs">
+          <div id="me-label" class="mono">CREATOR</div>
+          <div id="me-glyph">我</div>
+          <div id="me-hand">
+            <svg viewBox="0 0 52 52"><path d="M14 6 L14 34 L21 28 L26 40 L32 37 L27 26 L37 26 Z" fill="#0c0d11" stroke="#0c0d11" stroke-width="3" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+
+        <div id="plus" class="abs"></div>
+
+        <!-- vibe coding -->
+        <div id="card-vibe" class="abs">
+          <div id="vibe-head"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="mono" data-layout-ignore>prompt.session</span></div>
+          <div id="prompt"><span class="caret-sign">›</span><span id="chars"><span class="ch">帮</span><span class="ch">我</span><span class="ch">做</span><span class="ch">一</span><span class="ch">段</span><span class="ch">开</span><span class="ch">场</span><span class="ch">动</span><span class="ch">画</span><span id="cursor"></span></span></div>
+          <div id="code">
+            <span class="cl" style="width:300px;background:#565c6b"></span>
+            <span class="cl" style="width:420px;background:#3a3f4b;margin-left:28px"></span>
+            <span class="cl" style="width:220px;background:#c8ff4d;margin-left:28px"></span>
+          </div>
+          <div id="vibe-title">
+            <span id="vibe-word">vibe coding</span>
+            <div id="vibe-wave"><svg viewBox="0 0 240 40"><path d="M0 20 Q 15 4 30 20 T 60 20 T 90 20 T 120 20 T 150 20 T 180 20 T 210 20 T 240 20" fill="none" stroke="#c8ff4d" stroke-width="4" stroke-linecap="round"/></svg></div>
+          </div>
+        </div>
+
+        <div id="foot-left" class="abs mono"><b>MANUAL</b> · 人工 + VIBE CODING</div>
+        <div id="foot-right" class="abs mono">01 / 03</div>
+
+        <div id="stamp" class="abs"><div id="stamp-pill">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path d="M4 12.5 L10 18 L20 6" fill="none" stroke="#0c0d11" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>我</span><span class="mono" style="letter-spacing:0">+ vibe coding</span>
+        </div></div>
+      </section>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const D = 3.9;
+
+      // timecode readout (driven by timeline time → deterministic)
+      const tc = document.getElementById("hud-right");
+      const tcState = { t: 0 };
+      const fmt = (t) => {
+        const f = Math.min(Math.floor(t * 30 + 1e-6), Math.round(D * 30));
+        const s = Math.floor(f / 30), fr = f % 30;
+        return "00:" + String(s).padStart(2, "0") + ":" + String(fr).padStart(2, "0");
+      };
+      tl.to(tcState, { t: D, duration: D, ease: "none", onUpdate: () => { tc.textContent = fmt(tcState.t); } }, 0);
+
+      // ---------- Beat 1: 到目前为止 (0 – 0.83) ----------
+      tl.from("#grid", { opacity: 0.4, duration: 0.5, ease: "power1.out" }, 0);
+      tl.from(["#hud-left", "#hud-right", "#track"], { y: -10, duration: 0.35, ease: "power3.out", stagger: 0.04 }, 0);
+      tl.fromTo("#track-fill", { scaleX: 0 }, { scaleX: 1, duration: 0.72, ease: "power2.inOut" }, 0.06);
+      tl.fromTo("#playhead", { x: 0 }, { x: 934, duration: 0.72, ease: "power2.inOut" }, 0.06);
+            tl.from("#sofar-cn", { opacity: 0.35, scale: 1.25, transformOrigin: "0% 50%", duration: 0.4, ease: "power3.out" }, 0);
+      tl.from("#sofar-en", { opacity: 0, x: -16, duration: 0.35, ease: "power3.out" }, 0.2);
+      tl.from("#now-chip", { opacity: 0, scale: 0.4, duration: 0.3, ease: "back.out(2.4)" }, 0.72);
+      tl.to("#rec-dot", { opacity: 0.25, duration: 0.4, ease: "sine.inOut", yoyo: true, repeat: 7 }, 0.3);
+
+      tl.from("#c-tl", { x: -70, y: -70, opacity: 0.3, duration: 0.55, ease: "power3.out" }, 0.12);
+      tl.from("#c-tr", { x: 70, y: -70, opacity: 0.3, duration: 0.55, ease: "power3.out" }, 0.16);
+      tl.from("#c-bl", { x: -70, y: 70, opacity: 0.3, duration: 0.55, ease: "power3.out" }, 0.2);
+      tl.from("#c-br", { x: 70, y: 70, opacity: 0.3, duration: 0.55, ease: "power3.out" }, 0.24);
+
+      // ---------- Beat 2: 你所看到的画面内容 (0.83 – 2.0) ----------
+      tl.from("#screen", { opacity: 0, scale: 0.94, duration: 0.4, ease: "power3.out" }, 0.8);
+      tl.to("#crosshair", { opacity: 0.2, duration: 0.2, yoyo: true, repeat: 3, ease: "sine.inOut" }, 0);
+      tl.to("#crosshair", { opacity: 0, scale: 0.4, duration: 0.25, ease: "power2.in" }, 0.8);
+      tl.from("#view-chip", { opacity: 0, y: -18, duration: 0.35, ease: "back.out(2)" }, 0.9);
+      tl.from("#s-ring", { opacity: 0, scale: 0.6, rotation: -60, duration: 0.6, ease: "power3.out" }, 1.0);
+      tl.from("#s-sun", { scale: 0, duration: 0.55, ease: "back.out(1.6)" }, 1.02);
+      tl.from("#s-h1", { scaleX: 0, duration: 0.4, ease: "power3.out" }, 1.14);
+      tl.from("#s-h2", { scaleX: 0, duration: 0.4, ease: "power3.out" }, 1.22);
+      tl.from("#s-h3", { scaleX: 0, duration: 0.35, ease: "power3.out" }, 1.3);
+      tl.from("#s-base", { scaleX: 0, duration: 0.45, ease: "power2.out" }, 1.3);
+      tl.from(["#s-b1", "#s-b2", "#s-b3"], { scaleY: 0, duration: 0.45, ease: "back.out(1.7)", stagger: 0.07 }, 1.38);
+      tl.from("#s-wave", { opacity: 0, x: -40, duration: 0.4, ease: "power3.out" }, 1.5);
+      tl.fromTo("#s-wave svg", { x: 0 }, { x: -300, duration: 2.4, ease: "none" }, 1.5);
+      tl.from("#s-tri", { scale: 0, rotation: -90, duration: 0.45, ease: "back.out(2.2)" }, 1.6);
+      tl.from("#s-layers", { opacity: 0, duration: 0.3 }, 1.0);
+      const layerState = { n: 0 };
+      const layerEl = document.getElementById("layer-n");
+      tl.to(layerState, { n: 9, duration: 0.85, ease: "none", onUpdate: () => { layerEl.textContent = String(Math.round(layerState.n)).padStart(2, "0"); } }, 1.0);
+      // ambient float of the "picture"
+      tl.to("#s-sun", { y: -10, duration: 1.0, ease: "sine.inOut", yoyo: true, repeat: 1 }, 1.6);
+      tl.to("#s-ring", { rotation: 40, duration: 2.3, ease: "none" }, 1.6);
+
+      // ---------- Beat 3: 是由我 + vibe coding 做的 (2.0 – 3.9) ----------
+      tl.fromTo("#frame", { y: 210 }, { y: 0, duration: 0.55, ease: "power3.inOut", immediateRender: true }, 1.9);
+      tl.from("#card-me", { opacity: 0, y: 90, duration: 0.5, ease: "back.out(1.5)" }, 2.0);
+      tl.from("#me-glyph", { scale: 0.5, duration: 0.5, ease: "back.out(2.2)" }, 2.06);
+      tl.from("#me-hand", { x: 30, y: 30, opacity: 0, duration: 0.35, ease: "power3.out" }, 2.2);
+      tl.from("#plus", { opacity: 0, scale: 0.2, rotation: -180, duration: 0.45, ease: "back.out(2)" }, 2.28);
+      tl.from("#card-vibe", { opacity: 0, y: 90, duration: 0.5, ease: "back.out(1.5)" }, 2.4);
+      tl.from("#vibe-word", { opacity: 0, x: -24, duration: 0.35, ease: "power3.out" }, 2.55);
+      tl.from("#vibe-wave", { opacity: 0, duration: 0.3 }, 2.62);
+      tl.fromTo("#vibe-wave svg", { x: 0 }, { x: -60, duration: 0.5, ease: "none", repeat: 2 }, 2.62);
+
+      // typed prompt, char by char
+      const chars = gsap.utils.toArray("#prompt .ch");
+      tl.set(chars, { opacity: 0 }, 0);
+      chars.forEach((c, i) => { tl.set(c, { opacity: 1 }, 2.62 + i * 0.055); tl.set("#cursor", { x: (i + 1) * 28 }, 2.62 + i * 0.055); });
+      tl.from("#cursor", { opacity: 0, duration: 0.01 }, 2.55);
+      tl.to("#cursor", { opacity: 0, duration: 0.18, ease: "steps(1)", yoyo: true, repeat: 3 }, 3.2);
+
+      tl.from("#code .cl", { scaleX: 0, duration: 0.3, ease: "power3.out", stagger: 0.08 }, 3.08);
+
+      // connectors: maker → picture
+      tl.from("#wire-me", { scaleY: 0, duration: 0.32, ease: "power2.out" }, 2.95);
+      tl.from("#wire-vibe", { scaleY: 0, duration: 0.32, ease: "power2.out" }, 3.02);
+      tl.fromTo("#screen-glow", { opacity: 0 }, { opacity: 1, duration: 0.18, ease: "power2.out" }, 3.28);
+      tl.to("#screen-glow", { opacity: 0.45, duration: 0.5, ease: "power2.out" }, 3.46);
+      tl.from("#stamp-pill", { opacity: 0, scale: 1.8, rotation: -8, duration: 0.32, ease: "power4.out" }, 3.3);
+      tl.to("#stamp-pill", { rotation: -3, duration: 0.3, ease: "power2.out" }, 3.62);
+
+      tl.from(["#foot-left", "#foot-right"], { opacity: 0, y: 12, duration: 0.4, ease: "power3.out" }, 2.1);
+
+      // closing hold: gentle settle push-in for continuity into scene 2
+      tl.to("#frame", { scale: 1.015, duration: 0.6, ease: "sine.inOut" }, 3.3);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

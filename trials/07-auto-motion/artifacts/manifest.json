@@ -1,0 +1,61 @@
+{
+  "source": "transcription.srt",
+  "source_start_ms": 300,
+  "source_end_ms": 11366,
+  "total_duration_ms": 11066,
+  "total_duration_seconds": "11.066",
+  "specification": {
+    "width": 1080,
+    "height": 1440,
+    "fps": 30,
+    "audio": false
+  },
+  "scenes": [
+    {
+      "scene_id": "scene-001",
+      "title": "人工配合 vibe coding 制作",
+      "subtitle_ids": [
+        1,
+        2,
+        3
+      ],
+      "start_ms": 300,
+      "end_ms": 4200,
+      "duration_ms": 3900,
+      "duration_seconds": "3.900",
+      "directory": "scenes/scene-001",
+      "output_file": "scene-001.mp4",
+      "text": "到目前为止\n你所看到的画面内容\n是由我加vibe coding做的"
+    },
+    {
+      "scene_id": "scene-002",
+      "title": "AI 集团全自动制作",
+      "subtitle_ids": [
+        4,
+        5,
+        6
+      ],
+      "start_ms": 4200,
+      "end_ms": 8533,
+      "duration_ms": 4333,
+      "duration_seconds": "4.333",
+      "directory": "scenes/scene-002",
+      "output_file": "scene-002.mp4",
+      "text": "但此时此刻\n你所看到的画面已经是\n由AI集团全自动做的"
+    },
+    {
+      "scene_id": "scene-003",
+      "title": "Codex 指挥协作",
+      "subtitle_ids": [
+        7
+      ],
+      "start_ms": 8533,
+      "end_ms": 11366,
+      "duration_ms": 2833,
+      "duration_seconds": "2.833",
+      "directory": "scenes/scene-003",
+      "output_file": "scene-003.mp4",
+      "text": "我的方法就是用Codex作为主agent指挥"
+    }
+  ]
+}

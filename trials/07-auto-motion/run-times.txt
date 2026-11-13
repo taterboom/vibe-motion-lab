@@ -1,0 +1,7 @@
+start 00:33:50
+exit=2
+end 00:33:51
+README 原命令报错: unexpected argument '--ask-for-approval'（codex-cli 0.169.0），改用 codex -a never exec
+start2 00:34:02
+exit=0
+end2 00:54:26

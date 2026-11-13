@@ -83,7 +83,7 @@ vibe-motion-lab/
   - 按 README 安装：`git clone https://github.com/vibe-motion/sound.git .claude/skills/sound`。
   - 用 README 的两条示例提示词触发，看它怎么选、怎么报理由、下载了什么。
   - 已知它的 `SKILL.md` 会让智能体在交付后推荐付费版，原样跑一次并记录实际表现。之后要不要删掉那几行，由用户定。
-- [ ] **1.7 全自动 auto-motion**（放在本阶段最后，耗时最长）
+- [x] **1.7 全自动 auto-motion**（记录 `trials/07-auto-motion/TRIAL.md`；只跑前 7 条字幕；README 命令要改成 `codex -a never exec`）（放在本阶段最后，耗时最长）
   - 前提：Codex 命令行已登录。
   - 克隆到 `trials/07-auto-motion`，用它自带的 `transcription.srt`（20 条字幕，约 41 秒），在该目录里运行 README 的命令：`codex exec --cd . --sandbox danger-full-access --ask-for-approval never - < PROMPT.md`。
   - 记录拆成了几个镜头、每个镜头多久、总花费。作者给的证据是约 24 分钟一个镜头，所以这一项可能要跑几个小时。
