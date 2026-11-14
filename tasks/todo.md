@@ -29,7 +29,7 @@ vibe-motion-lab/
   STATUS.md            进度
   tasks/todo.md        本计划
   notes/hypotheses.md  读代码得出的待验证假设
-  notes/scorecard.md   好坏清单（第三阶段写）
+  notes/playbook.md    总结：给其他项目参考的做法和各工具结论
   trials/NN-名字/      每次试验一个目录：工程、成片、TRIAL.md（试验记录；不用 README.md，免得和外部工程自带的冲突）
 ```
 
